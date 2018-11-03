@@ -1,0 +1,6 @@
+[ver:1,total:180]
+Gemfile:130,1542466800:130,m
+config/routes.rb:20,1542466800:20,m
+app/controllers/admin/attendances_controller.rb:10,1542466800:10,m
+app/controllers/admin/groups_controller.rb:10,1542466800:10,m
+app/controllers/admin/subjects_controller.rb:10,1542466800:10,m
