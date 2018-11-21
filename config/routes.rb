@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   devise_scope :admin do
     namespace :admin, path: 'a' do
       authenticated :admin do
-        root 'admin#index'
-        get '/admin', to: 'admin#index', as: 'dashboard'
+        root 'dashboard#index'
+        get '/dashboard', to: 'dashboard#index', as: 'dashboard'
         get '/a/sign_out', to: 'devise/sessions#destroy', as: :delete
         resources :students
         resources :groups
