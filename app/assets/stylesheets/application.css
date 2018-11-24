@@ -11,7 +11,10 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
- *= require morris
+ *= require dataTables.bootstrap4.min
+ *= require buttons.bootstrap4.min
+ *= require responsive.bootstrap4.min
+ *= require select.bootstrap4.min
  *= require bootstrap.min
  *= require icons
  *= require metismenu.min

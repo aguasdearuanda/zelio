@@ -8,10 +8,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'internal', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/favicon.ico">
+        <link rel="shortcut icon" href="/assets/favicon.ico">
     </head>
 
     <body>
@@ -40,14 +40,14 @@
         <!-- END wrapper -->
 
         <!--Morris Chart-->
-        <!-- <script src="assets/morris.min.js"></script> -->
-        <!-- <script src="assets/raphael-min.js"></script> -->
+        <script src="/assets/morris.min.js"></script>
+        <script src="/assets/raphael-min.js"></script>
 
         <!-- Dashboard init -->
-        <!-- <script src="assets/jquery.dashboard.js"></script> -->
+        <script src="/assets/jquery.dashboard.js"></script>
 
         <!-- App js -->
-        <!-- <script src="assets/jquery.core.js"></script> -->
-        <!-- <script src="assets/jquery.app.js"></script> -->
+        <script src="/assets/jquery.core.js"></script>
+        <script src="/assets/jquery.app.js"></script>
     </body>
 </html>
