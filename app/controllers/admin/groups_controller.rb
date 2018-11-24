@@ -7,6 +7,10 @@ class Admin::GroupsController < ApplicationController
     @groups = Group.all
   end
 
+  def show
+    @group = Group.find(params[:id])
+  end
+
   def new
     @group = Group.new
   end
@@ -16,6 +20,7 @@ class Admin::GroupsController < ApplicationController
 
     if @group.save
       flash[:success] = 'Group was created succesfully.'
+      redirect_to admin_groups_path
     else
       flash[:error] = 'Something went wrong.'
       render :new
@@ -32,6 +37,7 @@ class Admin::GroupsController < ApplicationController
 
     if @group.update_attributes(group_params)
       flash[:success] = 'The group was updated succesfully.'
+      redirect_to admin_groups_path
     else
       render :edit
     end
@@ -39,12 +45,10 @@ class Admin::GroupsController < ApplicationController
 
   def destroy
     @group = Group.find(params[:id])
+    @group.destroy
 
-    if @group.destroy
-      flash[:success] = 'The group was deleted succesfully.'
-    else
-      redirect_to admin_groups_path
-    end
+    flash['success'] = 'Group was removed successfully.'
+    redirect_to admin_groups_path
   end
 
   private
