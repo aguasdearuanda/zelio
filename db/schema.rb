@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_24_141811) do
+ActiveRecord::Schema.define(version: 2018_12_08_211937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,43 +23,46 @@ ActiveRecord::Schema.define(version: 2018_11_24_141811) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "attendances", force: :cascade do |t|
-    t.integer "student_id"
-    t.integer "subject_id"
-    t.boolean "attended"
+  create_table "klasses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "groups", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "klasses_students", id: false, force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.bigint "klass_id", null: false
+    t.index ["klass_id", "student_id"], name: "index_klasses_students_on_klass_id_and_student_id"
+    t.index ["student_id", "klass_id"], name: "index_klasses_students_on_student_id_and_klass_id"
+  end
+
+  create_table "klasses_teachers", id: false, force: :cascade do |t|
+    t.bigint "klass_id", null: false
+    t.bigint "teacher_id", null: false
+    t.index ["klass_id", "teacher_id"], name: "index_klasses_teachers_on_klass_id_and_teacher_id"
+    t.index ["teacher_id", "klass_id"], name: "index_klasses_teachers_on_teacher_id_and_klass_id"
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "name"
     t.string "email"
-    t.string "mobile_phone"
-    t.integer "group_id"
-  end
-
-  create_table "subjects", force: :cascade do |t|
-    t.string "title"
-    t.integer "teacher_id"
-    t.integer "group_id"
+    t.string "phone"
+    t.datetime "birthday"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "name"
     t.string "email"
-    t.string "mobile_number"
+    t.string "phone"
+    t.datetime "birthday"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
