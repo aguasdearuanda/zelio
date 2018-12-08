@@ -5,9 +5,11 @@ This is a volunteer project to https://www.aguasdearuanda.org.br/ that will cont
 ## Project
 
 * First section (Work in progress)
-  - Setting up the frontend.
-  - Create a Administrator session to manage student, group, attendance, subject and teacher.
-
+  - Setting up the frontend. (Done)
+  - Create a Administrator session (Done)
+    - CRUD and relationship between Students, Klasses, Teachers (Done)
+    - Make a way to control if the student is attending the classes. (Work in progress)
+    - Make a way just to say if the student paid on that month.
 * Second section
   - Create a Student session to see their attendance's history and payment as well.
   PS, the payment will not be made through the application, the administrator gonna mark as paid.
