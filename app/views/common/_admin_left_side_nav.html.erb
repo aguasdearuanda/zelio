@@ -22,24 +22,24 @@
         <li>
             <a href="javascript: void(0);"><i class="ti-light-bulb"></i> <span> Turmas </span> <span class="menu-arrow"></span></a>
             <ul class="nav-second-level" aria-expanded="false">
-                <li><%= link_to 'Cadastrar turma', new_admin_group_path %></li>
-                <li><%= link_to 'Lista de turmas', admin_groups_path %></li>
+                <li><%= link_to 'Cadastrar turma', new_admin_klass_path %></li>
+                <li><%= link_to 'Lista de turmas', admin_klasses_path %></li>
             </ul>
         </li>
 
         <li>
             <a href="javascript: void(0);"><i class="ti-pencil-alt"></i><span> Alunos </span> <span class="menu-arrow"></span></a>
             <ul class="nav-second-level" aria-expanded="false">
-                <li>Cadastrar aluno</li>
-                <li>Lista de alunos</li>
+                <li><%= link_to 'Cadastrar aluno(a)', new_admin_student_path %></li>
+                <li><%= link_to 'Lista de alunos', admin_students_path %></li>
             </ul>
         </li>
 
         <li>
             <a href="javascript: void(0);"><i class="ti-light-bulb"></i> <span> Professores </span> <span class="menu-arrow"></span></a>
             <ul class="nav-second-level" aria-expanded="false">
-                <li>Cadastrar professor</li>
-                <li>Lista de professores</li>
+                <li><%= link_to 'Cadastrar professor(a)', new_admin_teacher_path %></li>
+                <li><%= link_to 'Lista de Professores', admin_teachers_path %></li>
             </ul>
         </li>
     </ul>

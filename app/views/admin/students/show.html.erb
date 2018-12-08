@@ -1,0 +1,45 @@
+<!-- Start content -->
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h4 class="m-b-20 header-title">Detalhes do aluno(a)</h4>
+        <div class="form-group">
+          <div class="col-md-10">
+            <label>Nome: </label>
+            <%= @student.name %>
+          </div>
+          <div class="col-md-10">
+            <label>Email: </label>
+            <%= @student.email %>
+          </div>
+          <div class="col-md-10">
+            <label>Telefone: </label>
+            <%= @student.phone %>
+          </div>
+          <div class="col-md-10">
+            <label>Nascimento: </label>
+            <%= @student.birthday %>
+          </div>
+          <div class="col-md-10">
+            <label>Turmas: </label>
+          </div>
+          <div class="col-md-10">
+            <table class="table table-striped">
+                <tbody>
+                    <% @student.klasses.each do |klass| %>
+                    <tr class="font-13">
+                      <td><%= klass.name %></td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+          </div>
+        </div>
+        <%= link_to 'Editar', edit_admin_student_path(@student), class: "btn btn-success" %>
+        <%= link_to 'Voltar', :back, class: "btn btn-link" %>
+      </div>
+      <!-- container -->
+    </div>
+  </div>
+</div>
