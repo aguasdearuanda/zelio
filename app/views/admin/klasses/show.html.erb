@@ -1,0 +1,47 @@
+<!-- Start content -->
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h4 class="m-b-20 header-title">Detalhes da turma</h4>
+
+        <div class="form-group">
+          <div class="col-md-10">
+            <label>Nome:
+            </label>
+            <%= @klass.name %>
+          </div>
+          <div class="col-md-10">
+            <label>Professor(a):
+            </label>
+            <tr>
+            <% @klass.teachers.each do |teacher| %>
+              <td><%= teacher.name %></td>
+            <% end %>
+            </tr>
+          </div>
+          <div class="col-md-10">
+            <label>Lista de alunos:
+            </label>
+          </div>
+          <div class="col-md-10">
+            <table class="table table-striped">
+                <tbody>
+                    <% @klass.students.each do |student| %>
+                    <tr class="font-13">
+                      <td><%= student.name %></td>
+                      <td> Ativo </td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+          </div>
+        <div class="col-md-10">
+          <%= link_to 'Editar', edit_admin_klass_path(@klass), class: "btn btn-success" %>
+          <%= link_to 'Voltar', :back, class: "btn btn-link" %>
+        </div>
+      </div>
+      <!-- container -->
+    </div>
+  </div>
+</div>

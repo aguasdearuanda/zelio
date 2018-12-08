@@ -11,7 +11,7 @@
           <div class="col-12">
               <div class="table-responsive">
                   <table id="datatable" class="table table-bordered">
-                    <% if @groups.empty? %>
+                    <% if @klasses.empty? %>
                     <p class="text-muted font-13 m-b-30">
                         Nenhuma turma encontrada!
                     </p>
@@ -26,13 +26,13 @@
 
 
                     <tbody>
-                        <% @groups.each do |group| %>
+                        <% @klasses.each do |klass| %>
                         <tr>
-                            <td><%= group.name %></td>
-                            <td><%= group.created_at %></td>
-                            <td><%= link_to 'Detalhe', admin_group_path(group) %> | 
-                                <%= link_to 'Editar', edit_admin_group_path(group) %> |
-                                <%= link_to 'Excluir', admin_group_path(group),  data: { confirm: 'Tem certeza?' }, method: :delete %>
+                            <td><%= klass.name %></td>
+                            <td><%= klass.created_at %></td>
+                            <td><%= link_to 'Detalhe', admin_klass_path(klass) %> |
+                                <%= link_to 'Editar', edit_admin_klass_path(klass) %> |
+                                <%= link_to 'Excluir', admin_klass_path(klass),  data: { confirm: 'Tem certeza?' }, method: :delete %>
                         </tr>
                         <% end %>
                     </tbody>
@@ -78,14 +78,10 @@
 
     </div> <!-- container -->
 
-
+    <!-- Footer -->
     <div class="footer">
-        <div class="pull-right hide-phone">
-            Project Completed <strong class="text-custom">57%</strong>.
-        </div>
-        <div>
-            <strong>Simple Admin</strong> - Copyright © 2017 - 2018
-        </div>
+      <%= render 'common/footer' %>
     </div>
+    <!-- END Footer -->
 
 </div>
