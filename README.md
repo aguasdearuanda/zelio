@@ -10,6 +10,7 @@ This is a volunteer project to https://www.aguasdearuanda.org.br/ that will cont
     - CRUD and relationship between Students, Klasses, Teachers (Done)
     - Make a way to control if the student is attending the classes. (Work in progress)
     - Make a way just to say if the student paid on that month.
+    - Allow Administrator change the information about your profile(add photo as well).
 * Second section
   - Create a Student session to see their attendance's history and payment as well.
   PS, the payment will not be made through the application, the administrator gonna mark as paid.
