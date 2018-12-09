@@ -9,7 +9,7 @@
             <div class="text-center">
               <h2 class="text-uppercase m-t-0 m-b-30">
                 <a href="index.html" class="text-success">
-                  <span><%= image_tag('logo.png', height: '30') %></span>
+                  <span><%= image_tag('aguasdearuanda.jpg', height: '120') %></span>
                 </a>
               </h2>
               <!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
@@ -26,7 +26,6 @@
 
                 <div class="form-group m-b-20">
                   <div class="col-xs-12">
-                    <a href="pages-forget-password.html" class="text-muted pull-right font-14">Forgot your password?</a>
                     <label for="password">Password</label>
                     <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
                   </div>
@@ -48,7 +47,6 @@
                     <%= f.submit "Log in", class: 'btn btn-lg btn-primary btn-block' %>
                   </div>
                 </div>
-                <%= render "devise/shared/links" %>
               <% end %>
 
               <div class="clearfix"></div>
@@ -56,14 +54,6 @@
             </div>
           </div>
           <!-- end card-box-->
-
-
-          <div class="row m-t-50">
-            <div class="col-sm-12 text-center">
-              <p class="text-muted">Don't have an account? <a href="pages-register.html" class="text-dark m-l-5">Sign Up</a></p>
-            </div>
-          </div>
-
         </div>
         <!-- end wrapper -->
 
@@ -71,4 +61,3 @@
     </div>
   </div>
 </section>
-
