@@ -22,12 +22,17 @@ This is a volunteer project to https://www.aguasdearuanda.org.br/ that will cont
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Installing
+### Settings
 
 ```
 git clone git@github.com:davithss/zelio.git
 bundle install
 rake db:create db:migrate
+```
+#### Create a Admin User
+```
+rails console
+Admin.create!({email: 'your_email', password: 'password'})
 ```
 
 ## Running the tests
