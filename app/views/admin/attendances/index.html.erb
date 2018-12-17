@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row">
           <div class="col-sm-12">
-              <h4 class="header-title m-t-0 m-b-20">Turmas</h4>
+              <h4 class="header-title m-t-0 m-b-20">Lista de Presença</h4>
           </div>
       </div>
 
@@ -11,14 +11,15 @@
           <div class="col-12">
               <div class="table-responsive">
                   <table id="datatable" class="table table-bordered">
-                    <% if @klasses.empty? %>
+                    <% if @attendances.empty? %>
                     <p class="text-muted font-13 m-b-30">
-                        Nenhuma turma encontrada!
+                        Nenhuma lista vinculada a esta turma!
                     </p>
                     <% else %>
                     <thead>
                         <tr>
-                            <th>Nome</th>
+                            <th>Turma</th>
+                            <th>Assunto</th>
                             <th>Data de criação</th>
                             <th>Ação</th>
                         </tr>
@@ -26,15 +27,17 @@
 
 
                     <tbody>
-                        <% @klasses.each do |klass| %>
+                        <% @attendances.each do |attendance| %>
+                          <% attendance.klasses.each do |klass| %>
                         <tr>
                             <td><%= klass.name %></td>
-                            <td><%= klass.created_at %></td>
-                            <td><%= link_to 'Lista de presença', admin_klass_attendances_path(klass) %> |
-                                <%= link_to 'Detalhe', admin_klass_path(klass) %> |
-                                <%= link_to 'Editar', edit_admin_klass_path(klass) %> |
-                                <%= link_to 'Excluir', admin_klass_path(klass),  data: { confirm: 'Tem certeza?' }, method: :delete %>
+                            <td><%= attendance.name %></td>
+                            <td><%= attendance.created_at %></td>
+                            <td><%= link_to 'Alunos', admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance) %> |
+                                <%= link_to 'Editar', edit_admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance) %> |
+                                <%= link_to 'Excluir', admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance),  data: { confirm: 'Tem certeza?' }, method: :delete %>
                         </tr>
+                          <% end %>
                         <% end %>
                     </tbody>
                     <% end %>
