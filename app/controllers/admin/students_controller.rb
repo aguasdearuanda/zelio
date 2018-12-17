@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Admin::StudentsController < ApplicationController
+class Admin::StudentsController < AdminController
   layout 'internal'
 
   def index

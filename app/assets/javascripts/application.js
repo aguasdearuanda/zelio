@@ -10,24 +10,3 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require activestorage
-//= require rails-ujs
-//= require turbolinks
-//= require modernizr.min
-//= require jquery.min
-//= require popper.min
-//= require bootstrap.min
-//= require metisMenu.min
-//= require waves
-//= require jquery.slimscroll
-//= require datatables/jquery.dataTables.min
-//= require datatables/dataTables.bootstrap4.min
-//= require datatables/dataTables.buttons.min
-//= require datatables/jszip.min
-//= require datatables/pdfmake.min
-//= require datatables/vfs_fonts
-//= require datatables/buttons.html5.min
-//= require datatables/dataTables.keyTable.min
-//= require datatables/dataTables.responsive.min
-//= require datatables/responsive.bootstrap4.min
-//= require datatables/dataTables.select.min

@@ -1,53 +1,42 @@
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>SimpleAdmin - Responsive Admin Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <%= csrf_meta_tags %>
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <head>
+    <meta charset="utf-8" />
+    <title>SimpleAdmin - Responsive Admin Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'internal', media: 'all' %>
+    <%= javascript_include_tag 'internal' %>
 
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="/assets/favicon.ico">
-    </head>
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+  </head>
 
-    <body>
+  <body>
 
-        <!-- Begin page -->
-        <div id="wrapper">
+    <!-- Begin page -->
+    <div id="wrapper">
 
-          <!-- Top Bar Start -->
-          <div class="topbar">
-            <%= render 'common/top_bar_nav' %>
-          </div>
-          <!-- Top Bar End -->
+      <!-- Top Bar Start -->
+      <div class="topbar">
+        <%= render 'common/top_bar_nav' %>
+      </div>
+      <!-- Top Bar End -->
 
-          <!-- ========== Left Sidebar Start ========== -->
-          <div class="left side-menu">
-            <%= render 'common/admin_left_side_nav' %>
-          </div>
-          <!-- Left Sidebar End -->
+      <!-- ========== Left Sidebar Start ========== -->
+      <div class="left side-menu">
+        <%= render 'common/admin_left_side_nav' %>
+      </div>
+      <!-- Left Sidebar End -->
 
-          <!-- Start right Content here -->
-          <div class="content-page">
-            <%= yield %>
-          </div>
-          <!-- End Right content here -->
-        </div>
-        <!-- END wrapper -->
-
-        <!--Morris Chart-->
-        <script src="/assets/morris.min.js"></script>
-        <script src="/assets/raphael-min.js"></script>
-
-        <!-- Dashboard init -->
-        <script src="/assets/jquery.dashboard.js"></script>
-
-        <!-- App js -->
-        <script src="/assets/jquery.core.js"></script>
-        <script src="/assets/jquery.app.js"></script>
-    </body>
+      <!-- Start right Content here -->
+      <div class="content-page">
+        <%= yield %>
+      </div>
+      <!-- End Right content here -->
+    </div>
+    <!-- END wrapper -->
+  </body>
 </html>
