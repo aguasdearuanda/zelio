@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row">
           <div class="col-sm-12">
-              <h4 class="header-title m-t-0 m-b-20">Lista de Presença</h4>
+              <h4 class="header-title m-t-0 m-b-20">Aulas -  <%= link_to 'Criar aula', new_admin_klass_attendance_path(klass_id: params[:klass_id], id: @attendance), class: 'btn btn-success btn-sm' %></h4>
           </div>
       </div>
 
@@ -19,7 +19,7 @@
                     <thead>
                         <tr>
                             <th>Turma</th>
-                            <th>Assunto</th>
+                            <th>Aula</th>
                             <th>Data de criação</th>
                             <th>Ação</th>
                         </tr>
@@ -32,7 +32,7 @@
                             <td><%= klass.name %></td>
                             <td><%= attendance.name %></td>
                             <td><%= attendance.created_at.strftime("%d-%m-%Y") %></td>
-                            <td><%= link_to 'Alunos', admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-info btn-sm' %>
+                            <td><%= link_to 'Lista de presença', admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-info btn-sm' %>
                                 <%= link_to 'Editar', edit_admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-success btn-sm' %>
                                 <%= link_to 'Excluir', admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-danger btn-sm',  data: { confirm: 'Tem certeza?' }, method: :delete %>
                         </tr>

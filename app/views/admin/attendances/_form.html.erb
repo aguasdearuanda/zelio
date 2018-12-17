@@ -6,7 +6,7 @@
           <%= f.input :name %>
         </div>
         <div class="col-md-10">
-          <%= f.association :klasses, label: 'Turma', as: :check_boxes, checked: params[:klass_id], input_html: { multiple: true, disabled: true } %>
+          <%= f.association :klasses, label: 'Turma', as: :check_boxes, checked: params[:klass_id], input_html: { multiple: true } %>
         </div>
         <div class="col-md-10">
           <%= f.association :students, label: 'Alunos', collection: @klass.students, as: :check_boxes, input_html: { multiple: true } %>
