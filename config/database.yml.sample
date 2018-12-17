@@ -2,7 +2,7 @@ development:
   adapter: postgresql
   encoding: utf8
   database: zelio_development
-  username:
+  username: postgres
   password:
   host: localhost
   port: 5432
@@ -11,7 +11,7 @@ test:
   adapter: postgresql
   encoding: utf8
   database: zelio_test
-  username:
+  username: postgres
   password:
   host: localhost
   port: 5432

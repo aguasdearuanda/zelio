@@ -1,48 +1,45 @@
 <div class="user-details">
-    <div class="pull-left">
-        <%= image_tag 'users/avatar-1', class: 'thumb-md rounded-circle' %>
-    </div>
-    <div class="user-info">
-        <a href="#">Stanley Jones</a>
-        <p class="text-muted m-0">Administrator</p>
-    </div>
+  <div class="user-info">
+    <a href="#">Stanley Jones</a>
+    <p class="text-muted m-0">Administrator</p>
+  </div>
 </div>
 
 <!--- Sidemenu -->
 <div id="sidebar-menu">
-    <!-- Left Menu Start -->
-    <ul class="metismenu" id="side-menu">
-        <li class="menu-title">Navigation</li>
-        <li>
-            <%= link_to admin_dashboard_path do %>
-              <i class="ti-home"></i> <span> Dashboard </span>
-            <% end %>
-        </li>
+  <!-- Left Menu Start -->
+  <ul class="metismenu" id="side-menu">
+    <li class="menu-title">Navigation</li>
+    <li>
+      <%= link_to admin_dashboard_path do %>
+        <i class="ti-home"></i> <span> Dashboard </span>
+      <% end %>
+    </li>
 
-        <li>
-            <a href="javascript: void(0);"><i class="ti-light-bulb"></i> <span> Turmas </span> <span class="menu-arrow"></span></a>
-            <ul class="nav-second-level" aria-expanded="false">
-                <li><%= link_to 'Cadastrar turma', new_admin_klass_path %></li>
-                <li><%= link_to 'Lista de turmas', admin_klasses_path %></li>
-            </ul>
-        </li>
+    <li>
+      <a href="javascript: void(0);"><i class="ti-light-bulb"></i> <span> Turmas </span> <span class="menu-arrow"></span></a>
+      <ul class="nav-second-level" aria-expanded="false">
+        <li><%= link_to 'Cadastrar turma', new_admin_klass_path %></li>
+        <li><%= link_to 'Lista de turmas', admin_klasses_path %></li>
+      </ul>
+    </li>
 
-        <li>
-            <a href="javascript: void(0);"><i class="ti-pencil-alt"></i><span> Alunos </span> <span class="menu-arrow"></span></a>
-            <ul class="nav-second-level" aria-expanded="false">
-                <li><%= link_to 'Cadastrar aluno(a)', new_admin_student_path %></li>
-                <li><%= link_to 'Lista de alunos', admin_students_path %></li>
-            </ul>
-        </li>
+    <li>
+      <a href="javascript: void(0);"><i class="ti-pencil-alt"></i><span> Alunos </span> <span class="menu-arrow"></span></a>
+      <ul class="nav-second-level" aria-expanded="false">
+        <li><%= link_to 'Cadastrar aluno(a)', new_admin_student_path %></li>
+        <li><%= link_to 'Lista de alunos', admin_students_path %></li>
+      </ul>
+    </li>
 
-        <li>
-            <a href="javascript: void(0);"><i class="ti-light-bulb"></i> <span> Professores </span> <span class="menu-arrow"></span></a>
-            <ul class="nav-second-level" aria-expanded="false">
-                <li><%= link_to 'Cadastrar professor(a)', new_admin_teacher_path %></li>
-                <li><%= link_to 'Lista de Professores', admin_teachers_path %></li>
-            </ul>
-        </li>
-    </ul>
+    <li>
+      <a href="javascript: void(0);"><i class="ti-light-bulb"></i> <span> Professores </span> <span class="menu-arrow"></span></a>
+      <ul class="nav-second-level" aria-expanded="false">
+        <li><%= link_to 'Cadastrar professor(a)', new_admin_teacher_path %></li>
+        <li><%= link_to 'Lista de Professores', admin_teachers_path %></li>
+      </ul>
+    </li>
+  </ul>
 
 </div>
 <!-- Sidebar -->
