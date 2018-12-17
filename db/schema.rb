@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_08_211937) do
+ActiveRecord::Schema.define(version: 2018_12_16_235841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,26 @@ ActiveRecord::Schema.define(version: 2018_12_08_211937) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "attendances", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "attendances_klasses", id: false, force: :cascade do |t|
+    t.bigint "attendance_id", null: false
+    t.bigint "klass_id", null: false
+    t.index ["attendance_id", "klass_id"], name: "index_attendances_klasses_on_attendance_id_and_klass_id"
+    t.index ["klass_id", "attendance_id"], name: "index_attendances_klasses_on_klass_id_and_attendance_id"
+  end
+
+  create_table "attendances_students", id: false, force: :cascade do |t|
+    t.bigint "attendance_id", null: false
+    t.bigint "student_id", null: false
+    t.index ["attendance_id", "student_id"], name: "index_attendances_students_on_attendance_id_and_student_id"
+    t.index ["student_id", "attendance_id"], name: "index_attendances_students_on_student_id_and_attendance_id"
   end
 
   create_table "klasses", force: :cascade do |t|
@@ -54,6 +74,7 @@ ActiveRecord::Schema.define(version: 2018_12_08_211937) do
     t.datetime "birthday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "attended"
   end
 
   create_table "teachers", force: :cascade do |t|

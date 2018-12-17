@@ -11,8 +11,9 @@ Rails.application.routes.draw do
         get '/dashboard', to: 'dashboard#index', as: 'dashboard'
         get '/a/sign_out', to: 'devise/sessions#destroy', as: :delete
         resources :students
-        resources :klasses
-        resources :attendances
+        resources :klasses do
+          resources :attendances, controller: '/admin/attendances'
+        end
         resources :teachers
       end
     end

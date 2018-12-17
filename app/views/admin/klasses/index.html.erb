@@ -6,30 +6,33 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="table-responsive">
-          <table id="datatable" class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Nome</th>
-                <th>Data de criação</th>
-                <th>Ação</th>
-              </tr>
-            </thead>
+      <div class="row">
+          <div class="col-12">
+              <div class="table-responsive">
+                  <table id="datatable" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Data de criação</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
 
-            <tbody>
-              <% @klasses.each do |klass| %>
-                <tr>
-                  <td><%= klass.name %></td>
-                  <td><%= l(klass.created_at, format: :only_date) %></td>
-                  <td><%= link_to 'Detalhe', admin_klass_path(klass) %> |
-                    <%= link_to 'Editar', edit_admin_klass_path(klass) %> |
-                    <%= link_to 'Excluir', admin_klass_path(klass),  data: { confirm: 'Tem certeza?' }, method: :delete %>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
+
+                    <tbody>
+                        <% @klasses.each do |klass| %>
+                        <tr>
+                            <td><%= klass.name %></td>
+                            <td><%= klass.created_at %></td>
+                            <td><%= link_to 'Lista de presença', admin_klass_attendances_path(klass), class: 'btn btn-warning btn-sm' %>
+                                <%= link_to 'Detalhe', admin_klass_path(klass), class: 'btn btn-info btn-sm' %>
+                                <%= link_to 'Editar', edit_admin_klass_path(klass), class: 'btn btn-success btn-sm' %>
+                                <%= link_to 'Excluir', admin_klass_path(klass), class: 'btn btn-danger btn-sm',  data: { confirm: 'Tem certeza?' }, method: :delete %>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                  </table>
+              </div>
           </div>
         </div>
       </div> <!-- end row -->
