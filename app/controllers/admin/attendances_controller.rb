@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Admin::AttendacesController < AdminController
+class Admin::AttendancesController < AdminController
   layout 'internal'
 
   def index
@@ -13,6 +13,7 @@ class Admin::AttendacesController < AdminController
 
   def new
     @attendance = Attendance.new
+    @klass = Klass.find_by(id: params[:klass_id])
   end
 
   def create
@@ -29,7 +30,7 @@ class Admin::AttendacesController < AdminController
 
   def edit
     @attendance = Attendance.find(params[:id])
-    @klass = Klass.find(params[:klass_id])
+    @klass = Klass.find_by(id: params[:klass_id])
     render :edit
   end
 

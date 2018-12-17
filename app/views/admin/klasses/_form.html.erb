@@ -3,13 +3,13 @@
     <%= simple_form_for [:admin, @klass] do |f| %>
       <div class="form-group">
         <div class="col-md-10">
-          <%= f.input :name %>
+          <%= f.input :name, label: 'Nome' %>
         </div>
         <div class="col-md-10">
-          <%= f.association :teachers, as: :check_boxes, input_html: { multiple: true } %>
+          <%= f.association :teachers, label: 'Professores', as: :check_boxes, input_html: { multiple: true } %>
         </div>
         <div class="col-md-10">
-          <%= f.association :students, as: :check_boxes, input_html: { multiple: true } %>
+          <%= f.association :students, label: 'Alunos', as: :check_boxes, input_html: { multiple: true } %>
         </div>
       </div>
       <%= f.submit 'Salvar', class: "btn btn-success" %>

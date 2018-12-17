@@ -3,19 +3,19 @@
     <%= simple_form_for [:admin, @teacher] do |f| %>
     <div class="form-group">
       <div class="col-md-10">
-        <%= f.input :name %>
+        <%= f.input :name, label: 'Nome' %>
       </div>
       <div class="col-md-10">
-        <%= f.input :email %>
+        <%= f.input :email, label: 'Email' %>
       </div>
       <div class="col-md-10">
-        <%= f.input :phone %>
+        <%= f.input :phone, label: 'Celular' %>
       </div>
       <div class="col-md-10">
-        <%= f.input :birthday, as: :date, html5: true %>
+        <%= f.input :birthday, as: :date, label: 'Data de nascimento', html5: true %>
       </div>
       <div class="col-md-10">
-        <%= f.association :klasses, as: :check_boxes , input_html: { multiple: true }%>
+        <%= f.association :klasses, as: :check_boxes, label: 'Turmas', input_html: { multiple: true }%>
       </div>
     </div>
     <%= f.submit 'Salvar', class: "btn btn-success" %>
