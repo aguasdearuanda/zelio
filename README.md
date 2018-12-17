@@ -5,7 +5,7 @@ This is a volunteer project to https://www.aguasdearuanda.org.br/ that will cont
 ## Project
 
 * First section (Work in progress)
-  - ~~Setting up the frontend. (Done)
+  - ~~Setting up the frontend. (Done)~~
   - Create a Administrator session (Done)
     - ~~CRUD and relationship between Students, Klasses, Teachers (Done)~~
     - ~~Make a way to control if the student is attending the classes. (Done)~~
