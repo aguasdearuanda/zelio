@@ -50,25 +50,32 @@
     </div>
     <!--end row -->
 
-
     <div class="row">
       <div class="col-sm-12">
         <div class="card-box">
           <h6 class="m-t-0">Justificativa de faltas</h6>
           <div class="table-responsive">
-            <table class="table table-hover mails m-0 table table-actions-bar">
+            <table class="table table-sm table-striped">
               <thead>
                 <tr>
-                  <th>Nome</th>
-                  <th>Email</th>
-                  <th>Descrição</th>
-                  <th>Data da falta</th>
+                  <th style="width: 10%;">Nome</th>
+                  <th style="width: 5%;">Data</th>
+                  <th style="width: 30%;">Descrição</th>
+                  <th style="width: 5%;">Situação</th>
+                  <th style="width: 5%;">Ação</th>
                 </tr>
               </thead>
 
               <tbody>
-
-
+                  <% @justifications.each do |justification| %>
+                  <tr>
+                    <td><%= justification.name %></td>
+                    <td><%= justification.date.strftime("%d-%m-%Y") %></td>
+                    <td><%= justification.description %></td>
+                    <td><%= label_for_status(justification.status) %></td>
+                    <td><%= link_to 'Detalhes', admin_justification_path(justification), class: 'btn btn-info btn-sm' %></td>
+                  </tr>
+                  <% end %>
               </tbody>
             </table>
           </div>
@@ -81,10 +88,10 @@
 
   <div class="footer">
     <div class="pull-right hide-phone">
-      Project Completed <strong class="text-custom">57%</strong>.
+      Project Completed <strong class="text-custom">70%</strong>.
     </div>
     <div>
-      <strong>Simple Admin</strong> - Copyright © 2017 - 2018
+      <strong>Águas de Aruanda</strong> - Copyright © 2018
     </div>
   </div>
 

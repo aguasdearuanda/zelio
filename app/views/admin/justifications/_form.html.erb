@@ -1,0 +1,11 @@
+  <div class="col-md-6">
+    <%= simple_form_for [:admin, @justification] do |f| %>
+      <div class="form-group">
+        <div class="col-md-10">
+          <%= f.input :status, as: :select, collection: Justification.statuses.keys %>
+        </div>
+      </div>
+      <%= f.submit 'Salvar', class: "btn btn-success" %>
+      <%= link_to 'Voltar', :back, class: "btn btn-link" %>
+    <% end %>
+  </div>
