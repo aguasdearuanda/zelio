@@ -15,11 +15,13 @@ Rails.application.routes.draw do
           resources :attendances, controller: '/admin/attendances'
         end
         resources :teachers
+        resources :justifications, only: %i[show edit update]
       end
     end
 
     unauthenticated do
       root 'devise/sessions#new', as: :unauthenticated_root
+      resources :justifications, only: %i[new create]
     end
   end
 end
