@@ -5,5 +5,6 @@ class Admin::DashboardController < AdminController
     @klasses = Klass.all
     @students = Student.all
     @attendances = Attendance.all
+    @justifications = Justification.all
   end
 end
