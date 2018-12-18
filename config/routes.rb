@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
     unauthenticated do
       root 'devise/sessions#new', as: :unauthenticated_root
-      resources :justifications, only: %i[new create]
+      resources :justifications, path: 'justificativa', path_names: { new: 'novo' }, only: %i[new create]
     end
   end
 end
