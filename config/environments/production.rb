@@ -18,7 +18,7 @@ Rails.application.configure do
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
-  # config.require_master_key = true
+  config.require_master_key = true
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -72,11 +72,11 @@ Rails.application.configure do
     s3_credentials: {
       bucket: Rails.application.credentials.dig(:aws, :bucket_name),
       access_key_id: Rails.application.credentials.dig(:aws, :access_key_id),
-      secret_access_key: Rails.application.credentials.dig(:aws, :secrete_access_key),
+      secret_access_key: Rails.application.credentials.dig(:aws, :secret_access_key),
       s3_region: 'us-east-1',
     }
   }
-  
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
