@@ -18,12 +18,11 @@
               <td><%= @justification.date %></td>
             </tr>
           </div>
-          <% if @justification.upload.attachment %>
+          <% if @justification.upload? %>
           <div class="col-md-10">
-            <label>Anexo:
-            </label>
+            <label>Anexo:</label>
             <tr>
-              <td><%= link_to 'Download', rails_blob_path(@justification.upload, diposition: :attachment) %></td>
+              <td><%= link_to 'Abrir', @justification.upload.url %></td>
             </tr>
           </div>
           <% end %>
