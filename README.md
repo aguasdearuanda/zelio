@@ -9,6 +9,7 @@ This is a volunteer project to https://www.aguasdearuanda.org.br/ that will cont
   - ~~Create a Administrator session (Done)~~
     - ~~CRUD and relationship between Students, Klasses, Teachers (Done)~~
     - ~~Make a way to control if the student is attending the classes. (Done)~~
+    - ~~Public justification form with S3 integration (Done)~~
     - Make a way just to say if the student paid on that month. (work in progress)
     - Create all the specs
     - Allow Administrator change the information about your profile(add photo as well).
