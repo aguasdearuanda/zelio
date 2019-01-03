@@ -9,6 +9,7 @@ class Admin::KlassesController < AdminController
 
   def show
     @klass = Klass.find(params[:id])
+    @attendances = @klass.attendances.all
   end
 
   def new

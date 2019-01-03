@@ -5,6 +5,7 @@ class Admin::AttendancesController < AdminController
 
   def index
     @attendances = Attendance.all
+    @klass = Klass.find_by(id: params[:klass_id])
   end
 
   def show
@@ -31,7 +32,6 @@ class Admin::AttendancesController < AdminController
   def edit
     @attendance = Attendance.find(params[:id])
     @klass = Klass.find_by(id: params[:klass_id])
-    render :edit
   end
 
   def update
@@ -39,7 +39,7 @@ class Admin::AttendancesController < AdminController
 
     if @attendance.update(attendance_params)
       flash[:success] = 'The attendance was updated succesfully.'
-      redirect_to admin_klass_attendances_path
+      redirect_to admin_klass_attendances_path(@attendance.klasses.first.id)
     else
       render :edit
     end

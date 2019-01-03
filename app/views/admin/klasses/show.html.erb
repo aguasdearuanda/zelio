@@ -31,6 +31,7 @@
                     <tr class="font-13">
                       <td><%= student.name %></td>
                       <td> Ativo </td>
+                      <td> <b> Faltas: </b> <%= student.count_presence(@attendances) %> </td>
                     </tr>
                     <% end %>
                 </tbody>
