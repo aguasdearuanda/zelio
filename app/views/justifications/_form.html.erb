@@ -13,6 +13,8 @@
             </div>
 
             <div class="account-content">
+              <h5 align="center"> Termo da Justificativa </h5>
+              <br />
               <%= simple_form_for [@justification], multipart: true do |f| %>
               <div class="form-group">
                 <%= f.input :name, label: 'Nome' %>
@@ -21,10 +23,10 @@
                 <%= f.input :email, label: 'Email' %>
               </div>
               <div class="form-group">
-                <%= f.input :date, label: 'Data', as: :date %>
+                <%= f.input :date, label: 'Aula justificada', as: :date %>
               </div>
               <div class="form-group">
-                <%= f.input :description, as: :text, label: 'Descrição' %>
+                <%= f.input :description, as: :text, label: 'Motivo' %>
               </div>
               <div class="form-group">
                 <%= f.file_field :upload, accept:'image/*' %>
