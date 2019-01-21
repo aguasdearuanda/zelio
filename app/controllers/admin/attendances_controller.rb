@@ -56,6 +56,6 @@ class Admin::AttendancesController < AdminController
   private
 
   def attendance_params
-    params.require(:attendance).permit(:name, klass_ids: [], student_ids: [])
+    params.require(:attendance).permit(:name, :realized_at, klass_ids: [], student_ids: [])
   end
 end

@@ -27,10 +27,10 @@
                     </thead>
 
                     <tbody>
-                        <% @attendances.each do |attendance| %>
+                        <% @klass.attendances.each do |attendance| %>
                         <tr>
                             <td><%= attendance.name %></td>
-                            <td><%= attendance.created_at.strftime("%d-%m-%Y") %></td>
+                            <td><%= attendance.realized_at&.strftime("%d-%m-%Y") %></td>
                             <td><%= link_to 'Lista de presença', admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-info btn-sm' %>
                                 <%= link_to 'Editar', edit_admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-success btn-sm' %>
                                 <%= link_to 'Excluir', admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-danger btn-sm',  data: { confirm: 'Tem certeza?' }, method: :delete %>

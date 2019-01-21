@@ -40,16 +40,16 @@ class Admin::StudentsController < AdminController
     end
   end
 
-  def destroy
-    @student = Student.find(params[:id])
-    @student.destroy
-    flash[:success] = 'Aluno removido com sucesso.'
+  def disable
+    @student = Student.find(params[:student_id])
+    @student.disable
     redirect_to admin_students_path
   end
 
   private
 
   def student_params
-    params.require(:student).permit(:name, :birthday, :email, :phone, klass_ids: [])
+    params.require(:student).permit(:name, :birthday, :email, :phone,
+                                    :active, klass_ids: [])
   end
 end

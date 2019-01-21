@@ -21,6 +21,10 @@
             </tr>
           </div>
           <div class="col-md-10">
+            <label>Total de aulas: <%= @klass.attendances.size %>
+            </label>
+          </div>
+          <div class="col-md-10">
             <label>Lista de alunos:
             </label>
           </div>
@@ -30,8 +34,8 @@
                     <% @klass.students.each do |student| %>
                     <tr class="font-13">
                       <td><%= student.name %></td>
-                      <td> Ativo </td>
-                      <td> <b> Faltas: </b> <%= student.count_presence(@attendances) %> </td>
+                      <td><%= label_for_active(student.active) %> </td>
+                      <td> <b> Faltas: </b> <%= @klass.attendances.size.zero? ? '0%' : student.count_presence(@attendances) %> </td>
                     </tr>
                     <% end %>
                 </tbody>
