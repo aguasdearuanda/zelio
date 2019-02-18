@@ -5,6 +5,6 @@ class Admin::DashboardController < AdminController
     @klasses = Klass.all
     @students = Student.all
     @attendances = Attendance.all
-    @justifications = Justification.all
+    @justifications = Justification.all.where(status: 'pendente')
   end
 end
