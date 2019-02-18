@@ -10,33 +10,37 @@
     <div class="row">
       <div class="col-12">
         <div class="table-responsive">
-          <table id="datatable" class="table table-bordered">
+          <table id="datatable"
+                 class="table table-bordered">
             <thead>
               <tr>
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Celular</th>
                 <th>Nascimento</th>
-                <th>Status</th>
                 <th>Ação</th>
               </tr>
             </thead>
 
-              <tbody>
-                <% @students.each do |student| %>
-                  <tr>
-                    <td><%= student.name %>
-                    <td><%= student.email %></td>
-                    <td><%= student.phone %></td>
-                    <td><%= student.birthday&.strftime("%d-%m-%Y") %></td>
-                    <td><%= label_for_active(student.active)%></td>
-                    <td><%= link_to 'Detalhe', admin_student_path(student), class: 'btn btn-info btn-sm' %>
-                      <%= link_to 'Editar', edit_admin_student_path(student), class: 'btn btn-success btn-sm' %>
-                      <% if student.active %>
-                        <%= link_to 'Desativar', admin_student_disable_path(student), class: 'btn btn-danger btn-sm', data: { confirm: 'Tem certeza?' } %>
-                      <% end %>
-                    </tr>
-                <% end %>
+            <tbody>
+              <% @students.each do |student| %>
+              <tr>
+                <td>
+                  <%= student.name %>
+                <td>
+                  <%= student.email %>
+                </td>
+                <td>
+                  <%= student.phone %>
+                </td>
+                <td>
+                  <%= student.birthday&.strftime("%d-%m-%Y") %>
+                </td>
+                <td align="center">
+                  <%= link_to 'Detalhe', admin_student_path(student), class: 'btn btn-info btn-sm' %>
+                  <%= link_to 'Editar', edit_admin_student_path(student), class: 'btn btn-success btn-sm' %>
+              </tr>
+              <% end %>
             </tbody>
           </table>
         </div>

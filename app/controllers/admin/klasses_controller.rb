@@ -44,6 +44,12 @@ class Admin::KlassesController < AdminController
     end
   end
 
+  def disable_student
+    @klass = Klass.find(params[:klass_id])
+    @klass.disable_student(params[:student_id])
+    redirect_to admin_klasses_path
+  end
+
   def destroy
     @klass = Klass.find(params[:id])
     @klass.destroy

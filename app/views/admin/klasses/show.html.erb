@@ -4,49 +4,67 @@
     <div class="row">
       <div class="col-sm-12">
         <h4 class="m-b-20 header-title">Detalhes da turma</h4>
-
         <div class="form-group">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <label>Nome:
             </label>
             <%= @klass.name %>
           </div>
-          <div class="col-md-10">
+          <div class="col-md-12">
             <label>Professor(a):
             </label>
             <tr>
-            <% @klass.teachers.each do |teacher| %>
-              <td><%= teacher.name %></td>
-            <% end %>
+              <% @klass.teachers.each do |teacher| %>
+              <td>
+                <%= teacher.name %>
+              </td>
+              <% end %>
             </tr>
           </div>
-          <div class="col-md-10">
-            <label>Total de aulas: <%= @klass.attendances.size %>
+          <div class="col-md-12">
+            <label>Total de aulas:
+              <%= @klass.attendances.size %>
             </label>
           </div>
-          <div class="col-md-10">
+          <div class="col-md-12">
             <label>Lista de alunos:
             </label>
           </div>
-          <div class="col-md-10">
-            <table class="table table-striped">
+          <div class="col-md-12">
+            <div class="table-responsive">
+              <table id="datatable"
+                     class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Situação do aluno(a)</th>
+                    <th>Faltas</th>
+                  </tr>
+                </thead>
                 <tbody>
-                    <% @klass.students.each do |student| %>
-                    <tr class="font-13">
-                      <td><%= student.name %></td>
-                      <td><%= label_for_active(student.active) %> </td>
-                      <td> <b> Faltas: </b> <%= @klass.attendances.size.zero? ? '0%' : student.count_presence(@attendances) %> </td>
-                    </tr>
-                    <% end %>
+                  <% @klass.students.each do |student| %>
+                  <tr>
+                    <td>
+                      <%= student.name %>
+                    </td>
+                    <td>
+                      <%= student.situations.where(klass_id: @klass.id).empty? ? label_for_klass_student_status('ativo') : label_for_klass_student_status('desativado') %>
+                    </td>
+                    <td>Total
+                      <%= student.count_presence(@attendances, @klass.id) %>
+                    </td>
+                  </tr>
+                  <% end %>
                 </tbody>
-            </table>
+              </table>
+            </div>
           </div>
-        <div class="col-md-10">
-          <%= link_to 'Editar', edit_admin_klass_path(@klass), class: "btn btn-success" %>
-          <%= link_to 'Voltar', :back, class: "btn btn-link" %>
+          <div class="col-md-10">
+            <%= link_to 'Editar', edit_admin_klass_path(@klass), class: "btn btn-success" %>
+            <%= link_to 'Voltar', :back, class: "btn btn-link" %>
+          </div>
         </div>
+        <!-- container -->
       </div>
-      <!-- container -->
     </div>
   </div>
-</div>

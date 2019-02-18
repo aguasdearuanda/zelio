@@ -10,12 +10,12 @@ Rails.application.routes.draw do
         root 'dashboard#index'
         get '/dashboard', to: 'dashboard#index', as: 'dashboard'
         get '/a/sign_out', to: 'devise/sessions#destroy', as: :delete
-        resources :students do
-          get 'disable', to: 'students#disable'
-        end
+        resources :students
         resources :klasses do
           resources :attendances, controller: '/admin/attendances'
+          get 'disable_student', to: 'klasses#disable_student'
         end
+        # resources :situations
         resources :teachers
         resources :justifications, only: %i[show edit update]
       end
