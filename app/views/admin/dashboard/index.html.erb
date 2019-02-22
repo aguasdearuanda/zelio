@@ -83,6 +83,33 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card-box">
+          <h6 class="m-t-0">Aniversariantes do mês de <%= I18n.t('date.month_names')[Date.today.month]%></h6>
+          <div class="table-responsive">
+            <table class="table table-sm table-striped">
+              <thead>
+                <tr>
+                  <th style="width: 10%;">Nome</th>
+                  <th style="width: 5%;">Data de Nascimento</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                  <% @birthday.each do |student| %>
+                  <tr>
+                    <td><%= student.name %></td>
+                    <td><%= student&.birthday.strftime("%d-%m-%Y") %></td>
+                  </tr>
+                  <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div> <!-- container -->
 
   <div class="footer">
