@@ -37,7 +37,7 @@
                 <thead>
                   <tr>
                     <th>Nome</th>
-                    <th>Situação do aluno(a)</th>
+                    <th>Situação</th>
                     <th>Faltas</th>
                   </tr>
                 </thead>
@@ -47,11 +47,23 @@
                     <td>
                       <%= student.name %>
                     </td>
-                    <td>
+                    <td align="center">
                       <%= student.situations.where(klass_id: @klass.id).empty? ? label_for_klass_student_status('ativo') : label_for_klass_student_status('desativado') %>
                     </td>
-                    <td>Total
-                      <%= student.count_presence(@attendances, @klass.id) %>
+                    <td>
+
+                      <div class="col-lg-12">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h3 class="panel-title">Aulas</h3>
+                          </div>
+                          <div class="panel-body">
+                            <%= student.show_attendances(@attendances, @klass.id) %><br>
+                            Total:
+                            <%= student.count_presence(@attendances, @klass.id) %>
+                          </div>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <% end %>
@@ -68,3 +80,4 @@
       </div>
     </div>
   </div>
+</div>
