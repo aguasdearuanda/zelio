@@ -32,7 +32,6 @@ RSpec.describe 'Groups management', type: :request do
       it 'fails to create a group' do
         group = Group.new
         group.save
-        binding.pry
         # expect(response).to fail
       end
     end
