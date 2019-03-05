@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JustificationHelper
   def label_for_status(status)
     if status == 'aceito'

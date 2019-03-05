@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module StudentHelper
   def label_for_active(active)
     if active
