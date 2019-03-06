@@ -8,6 +8,7 @@ gem 'aws-sdk', '~> 3'
 gem 'aws-sdk-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coffee-rails', '~> 4.2'
+gem 'coveralls', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
