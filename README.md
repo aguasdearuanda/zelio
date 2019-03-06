@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/aguasdearuanda/zelio.svg?branch=master)](https://travis-ci.org/aguasdearuanda/zelio)
+[![Coverage Status](https://coveralls.io/repos/github/aguasdearuanda/zelio/badge.svg)](https://coveralls.io/github/aguasdearuanda/zelio)
+
 # Zelio Classroom Management
 
 This is a volunteer project to https://www.aguasdearuanda.org.br/ that will control classroom students attendance.
@@ -6,7 +9,7 @@ This is a volunteer project to https://www.aguasdearuanda.org.br/ that will cont
 
 * First section (Work in progress)
   - Check it out what we have been done and what we still need to do to finish this section. https://github.com/aguasdearuanda/zelio/projects/1
-  
+
 * Second section
   - Discuss to create a hybrid mobile app
   - Create a Student session to see their attendance's history and payment as well.
