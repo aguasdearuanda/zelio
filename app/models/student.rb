@@ -4,6 +4,7 @@ class Student < ApplicationRecord
   has_and_belongs_to_many :klasses
   has_and_belongs_to_many :attendances
   has_many :situations
+  validates :name, presence: true
 
   def count_presence(attendances, klass)
     count = 0
