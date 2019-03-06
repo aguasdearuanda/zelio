@@ -5,20 +5,15 @@ This is a volunteer project to https://www.aguasdearuanda.org.br/ that will cont
 ## Project
 
 * First section (Work in progress)
-  - ~~Setting up the frontend. (Done)~~
-  - ~~Create a Administrator session (Done)~~
-    - ~~CRUD and relationship between Students, Klasses, Teachers (Done)~~
-    - ~~Make a way to control if the student is attending the classes. (Done)~~
-    - ~~Public justification form with S3 integration (Done)~~
-    - Make a way just to say if the student paid on that month. (work in progress)
-    - Create all the specs
-    - Allow Administrator change the information about your profile(add photo as well).
+  - Check it out our what we have been done and what we still need to do to finish this section. https://github.com/aguasdearuanda/zelio/projects/1
+  
 * Second section
+  - Discuss to create a hybrid mobile app
   - Create a Student session to see their attendance's history and payment as well.
   PS, the payment will not be made through the application, the administrator gonna mark as paid.
 
 * Third section
-  - To discuss about the e-learning.
+  - To discuss the distance learning process.
 
 ## Getting Started
 
@@ -40,12 +35,12 @@ Admin.create!({email: 'your_email', password: 'password'})
 ## Running the tests
 
 ```
-rspec
+Rspec
 ```
 
 ## Contributing
 ```
-Create a issue/feature
+Create an issue/feature
 Open a PR :)
 ```
 
