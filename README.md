@@ -5,7 +5,7 @@ This is a volunteer project to https://www.aguasdearuanda.org.br/ that will cont
 ## Project
 
 * First section (Work in progress)
-  - Check it out our what we have been done and what we still need to do to finish this section. https://github.com/aguasdearuanda/zelio/projects/1
+  - Check it out what we have been done and what we still need to do to finish this section. https://github.com/aguasdearuanda/zelio/projects/1
   
 * Second section
   - Discuss to create a hybrid mobile app
