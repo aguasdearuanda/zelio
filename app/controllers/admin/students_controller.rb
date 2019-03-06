@@ -40,12 +40,6 @@ class Admin::StudentsController < AdminController
     end
   end
 
-  def disable
-    @student = Student.find(params[:student_id])
-    @student.disable
-    redirect_to admin_students_path
-  end
-
   private
 
   def student_params
