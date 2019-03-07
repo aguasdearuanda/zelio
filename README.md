@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/aguasdearuanda/zelio.svg?branch=master)](https://travis-ci.org/aguasdearuanda/zelio)
 [![Coverage Status](https://coveralls.io/repos/github/aguasdearuanda/zelio/badge.svg)](https://coveralls.io/github/aguasdearuanda/zelio)
+[![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
 # Zelio Classroom Management
 
