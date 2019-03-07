@@ -2,10 +2,11 @@ AllCops:
   Exclude:
     - bin/**/*
     - db/migrate/**/*
-    - db/schema.rb
+    - db/**
     - tmp/**/*
     - vendor/**/*
     - log/**/*
+    - config/**/*
 
 Rails:
   Enabled: true
