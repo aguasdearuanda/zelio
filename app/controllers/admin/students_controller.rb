@@ -22,7 +22,7 @@ class Admin::StudentsController < AdminController
       flash[:success] = 'Aluno criado com sucesso!'
       redirect_to admin_students_path
     else
-      render :edit
+      render :new
     end
   end
 

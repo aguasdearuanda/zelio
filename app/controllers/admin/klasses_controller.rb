@@ -30,7 +30,6 @@ class Admin::KlassesController < AdminController
 
   def edit
     @klass = Klass.find(params[:id])
-    render :edit
   end
 
   def update
