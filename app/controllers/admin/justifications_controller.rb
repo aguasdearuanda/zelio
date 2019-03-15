@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Admin::JustificationsController < AdminController
+  def index
+    @justifications = Justification.all
+  end
+
   def show
     @justification = Justification.find(params[:id])
   end

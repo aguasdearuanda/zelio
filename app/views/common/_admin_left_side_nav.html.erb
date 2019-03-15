@@ -12,8 +12,15 @@
     <li class="menu-title">Navegação</li>
     <li>
       <%= link_to admin_dashboard_path do %>
-        <i class="ti-home"></i> <span> Dashboard </span>
+      <i class="ti-home"></i> <span> Dashboard </span>
       <% end %>
+    </li>
+
+    <li>
+      <a href="javascript: void(0);"><i class="ti-receipt"></i> <span> Justificativas </span> <span class="menu-arrow"></span></a>
+      <ul class="nav-second-level" aria-expanded="false">
+        <li><%= link_to 'Listar todas', admin_justifications_path %></li>
+      </ul>
     </li>
 
     <li>
@@ -35,7 +42,7 @@
     <li>
       <a href="javascript: void(0);"><i class="ti-light-bulb"></i> <span> Professores </span> <span class="menu-arrow"></span></a>
       <ul class="nav-second-level" aria-expanded="false">
-        <li><%= link_to 'Cadastrar professor(a)', new_admin_teacher_path %></li>
+        <li><%= link_to 'Cadastrar Professor(a)', new_admin_teacher_path %></li>
         <li><%= link_to 'Lista de Professores', admin_teachers_path %></li>
       </ul>
     </li>
