@@ -3,10 +3,20 @@
 class Admin::DashboardController < AdminController
   def index
     @klasses = Klass.all
-    @students = Student.all
+    @students = active_students
     @attendances = Attendance.all
     @justifications = Justification.all.where(status: 'pendente')
     @birthday = birthday_list
+  end
+
+  private
+
+  def active_students
+    count = 0
+    Student.all.each do |s|
+      count += 1 if s.situations.empty?
+    end
+    count
   end
 
   def birthday_list
