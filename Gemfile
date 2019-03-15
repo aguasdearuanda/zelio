@@ -5,29 +5,29 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 gem 'aws-sdk', '~> 3'
-gem 'aws-sdk-rails'
+gem 'aws-sdk-rails', '>= 2.1.0'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 4.2', '>= 4.2.2'
 gem 'coveralls', require: false
-gem 'devise'
+gem 'devise', '>= 4.6.1'
 gem 'jbuilder', '~> 2.5'
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 4.3.3'
 gem 'paperclip'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'rack', '>= 2.0.6'
-gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
-gem 'simple_form'
-gem 'sprockets-rails'
+gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
+gem 'simple_form', '>= 4.1.0'
+gem 'sprockets-rails', '>= 3.2.1'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails', '>= 5.0.1'
   gem 'faker'
   gem 'pry-nav'
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
   gem 'rspec_api_documentation'
   gem 'rubocop', require: false
   gem 'rubocop-rspec'
@@ -37,7 +37,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console', '>= 3.7.0'
 end
 
 group :test do
@@ -46,7 +46,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'rails-controller-testing'
+  gem 'rails-controller-testing', '>= 1.0.4'
   gem 'shoulda-matchers'
 end
 
