@@ -11,15 +11,15 @@ This is a volunteer project to https://www.aguasdearuanda.org.br/ that will cont
 ## Project
 
 * First section (Work in progress)
-  - Check it out what we have been done and what we still need to do to finish this section. https://github.com/aguasdearuanda/zelio/projects/1
+  - Check it out what we have been doing and what we still need to do in order to finish this section. https://github.com/aguasdearuanda/zelio/projects/1
 
 * Second section
-  - Discuss to create a hybrid mobile app
+  - Discuss the purpose of creating a hybrid mobile app
   - Create a Student session to see their attendance's history and payment as well.
-  PS, the payment will not be made through the application, the administrator gonna mark as paid.
+  PS, the payment will not be made through the application, the administrator will just update the payment status to paid.
 
 * Third section
-  - To discuss the distance learning process.
+  - To discuss the e-learning process.
 
 ## Getting Started
 
