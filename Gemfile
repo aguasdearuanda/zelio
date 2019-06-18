@@ -16,7 +16,8 @@ gem 'paperclip'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'rack', '>= 2.0.6'
-gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
+gem 'rails', '>= 5.2.3'
+gem 'rubocop-rails_config'
 gem 'simple_form', '>= 4.1.0'
 gem 'sprockets-rails', '>= 3.2.1'
 gem 'travis'
@@ -30,8 +31,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
   gem 'rspec_api_documentation'
-  gem 'rubocop', require: false
-  gem 'rubocop-rspec'
 end
 
 group :development do

@@ -1,3 +1,5 @@
+require: rubocop-rails
+
 AllCops:
   Exclude:
     - bin/**/*
@@ -33,12 +35,12 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 Metrics/LineLength:
- Max: 120
+  Max: 120
 
 Metrics/ClassLength:
   Max: 300
   Exclude:
-    - 'test/**/*.rb'
+    - "test/**/*.rb"
 
 Metrics/MethodLength:
   Max: 25
@@ -51,20 +53,20 @@ Naming/PredicateName:
 
 Metrics/BlockLength:
   Exclude:
-   - 'Rakefile'
-   - '**/*.rake'
-   - 'test/**/*.rb'
-   - 'spec/**/*.rb'
-   - 'db/seeds/**/*.rb'
-   - 'config/routes.rb'
-   - 'config/initializers/**/*.rb'
-   - 'spec/**/*'
+    - "Rakefile"
+    - "**/*.rake"
+    - "test/**/*.rb"
+    - "spec/**/*.rb"
+    - "db/seeds/**/*.rb"
+    - "config/routes.rb"
+    - "config/initializers/**/*.rb"
+    - "spec/**/*"
 
 Lint/AmbiguousBlockAssociation:
   Exclude:
-   - 'Rakefile'
-   - '**/*.rake'
-   - 'spec/**/*.rb'
+    - "Rakefile"
+    - "**/*.rake"
+    - "spec/**/*.rb"
 
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
