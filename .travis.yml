@@ -1,6 +1,4 @@
 language: ruby
-rvm:
-  - 2.6.3
 env:
   - DB=postgresql
 before_script:
