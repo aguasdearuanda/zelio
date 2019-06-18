@@ -1,7 +1,13 @@
 language: ruby
-env:
-  - DB=postgresql
 script:
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate RAILS_ENV=test
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
   - bundle exec rspec
+before_script:
+  - psql -c 'create database zelio_test;' -U postgres
+rvm:
+  - 2.6.3
+services:
+  - postgresql
+before_install:
+  - gem update --system
