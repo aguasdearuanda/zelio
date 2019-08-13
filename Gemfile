@@ -9,15 +9,15 @@ gem 'aws-sdk-rails', '>= 2.1.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coffee-rails', '~> 4.2', '>= 4.2.2'
 gem 'coveralls', require: false
-gem 'devise', '>= 4.6.1'
+gem 'devise', '>= 4.6.2'
 gem 'jbuilder', '~> 2.5'
-gem 'jquery-rails', '>= 4.3.3'
+gem 'jquery-rails', '>= 4.3.5'
 gem 'paperclip'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'rack', '>= 2.0.6'
 gem 'rails', '>= 5.2.3'
-gem 'rubocop-rails_config'
+gem 'rubocop-rails_config', '>= 0.6.2'
 gem 'simple_form', '>= 4.1.0'
 gem 'sprockets-rails', '>= 3.2.1'
 gem 'travis'
@@ -25,7 +25,7 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
-  gem 'factory_bot_rails', '>= 5.0.1'
+  gem 'factory_bot_rails', '>= 5.0.2'
   gem 'faker'
   gem 'pry-nav'
   gem 'pry-rails'
@@ -42,10 +42,10 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara', '>= 3.24.0'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'chromedriver-helper', '>= 2.1.1'
   gem 'rails-controller-testing', '>= 1.0.4'
   gem 'shoulda-matchers'
 end
