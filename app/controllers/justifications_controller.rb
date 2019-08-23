@@ -3,6 +3,7 @@
 class JustificationsController < ApplicationController
   def new
     @justification = Justification.new
+    @klasses = Klass.all
   end
 
   def create
@@ -19,6 +20,6 @@ class JustificationsController < ApplicationController
   private
 
   def justifications_params
-    params.require(:justification).permit(:name, :date, :email, :description, :upload)
+    params.require(:justification).permit(:name, :date, :email, :description, :upload, :klass)
   end
 end
