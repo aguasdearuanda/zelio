@@ -13,14 +13,19 @@
             </div>
 
             <div class="account-content">
-              <h5 align="center"> Termo da Justificativa </h5>
-              <br />
+              <h5 align="center">
+                Termo da Justificativa
+              </h5>
+              <br/>
               <%= simple_form_for [@justification], multipart: true do |f| %>
               <div class="form-group">
                 <%= f.input :name, label: 'Nome' %>
               </div>
               <div class="form-group">
                 <%= f.input :email, label: 'Email' %>
+              </div>
+              <div class="form-group">
+                <%= f.input :klass, label: 'Turma', collection: @klasses, as: :select %>
               </div>
               <div class="form-group">
                 <%= f.input :date, label: 'Aula justificada', as: :date %>
@@ -34,12 +39,12 @@
               <div class="form-group text-center m-b-0">
                 <%= f.submit 'Enviar', class: 'btn btn-primary waves-effect waves-light' %>
               </div>
-              <% end %>
-              <div class="clearfix"></div>
-            </div>
+            <% end %>
+            <div class="clearfix"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </section>
