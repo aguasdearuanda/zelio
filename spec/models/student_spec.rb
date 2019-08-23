@@ -11,9 +11,12 @@ RSpec.describe Student, type: :model do
   describe '#count_presence' do
     before do
       @student = create(:student)
+      @attendances = create_list(:attendance, 3)
     end
 
-    xit 'needs to count the student attendances' do
+    it 'needs to count the student attendances' do
+      count = @student.count_presence(@attendances, @student.klasses.first.id)
+      expect(count).to be_zero
     end
   end
 end
