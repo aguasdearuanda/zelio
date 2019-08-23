@@ -12,7 +12,11 @@ class Student < ApplicationRecord
               period = attendances.where('realized_at <= ?', situations.first.created_at)
               period_attendances(period)
             else
-              period = attendances.where('realized_at >= ?', created_at)
+              # period = attendances.where('realized_at >= ?', created_at)
+              period = []
+              attendances.each do |attendance|
+                period << attendance if attendance.realized_at >= created_at
+              end
               period_attendances(period)
             end
     count
@@ -48,5 +52,9 @@ class Student < ApplicationRecord
              else
                attendances.where('realized_at >= ?', created_at)
              end
+  end
+
+  def justifications(klass, email)
+    Justification.where('klass = ? AND email = ?', klass, email).count
   end
 end
