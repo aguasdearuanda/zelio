@@ -16,9 +16,8 @@ RSpec.describe Student, type: :model do
   end
 
   describe '#count_presence' do
-    it 'checks if student was deactivate' do
+    it 'checks if student was deactivated' do
       attendances = create_list(:attendance, 1, realized_at: 1.day.ago)
-      # binding.pry
       student_status = create(:situation, klass: attendances.first.klasses.first, student: @student)
       situation = @student.count_presence(attendances, student_status.klass)
       expect(situation).to be(1)
@@ -27,6 +26,20 @@ RSpec.describe Student, type: :model do
     it 'needs to count the student attendances' do
       count = @student.count_presence(@attendances, @student.klasses.first.id)
       expect(count).to be(3)
+    end
+  end
+
+  describe '#show_attendances' do
+    it 'shows the deactivated student attendances classes' do
+      attendances = create_list(:attendance, 1, realized_at: 1.day.ago)
+      student_status = create(:situation, klass: attendances.first.klasses.first, student: @student)
+      response = @student.show_attendances(attendances, student_status.klass)
+      expect(response).to be_a(String)
+    end
+
+    it 'shows the student attendances classes' do
+      response = @student.show_attendances(@attendances, @student.klasses.first.id)
+      expect(response).to be_a(String)
     end
   end
 

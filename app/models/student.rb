@@ -49,11 +49,17 @@ class Student < ApplicationRecord
   end
 
   def check_presence(attendances, klass)
-    period = if situations.where(klass_id: klass).present?
-               attendances.where('realized_at <= ?', situations.first.created_at)
-             else
-               attendances.where('realized_at >= ?', created_at)
-             end
+    period = []
+    if situations.where(klass_id: klass).present?
+      attendances.each do |attendance|
+        period << attendance if attendance.realized_at <= situations.first.created_at
+      end
+    else
+      attendances.each do |attendance|
+        period << attendance if attendance.realized_at >= created_at
+      end
+    end
+    period
   end
 
   def justifications(klass, email)
