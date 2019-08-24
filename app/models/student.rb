@@ -8,12 +8,14 @@ class Student < ApplicationRecord
 
   def count_presence(attendances, klass)
     count = 0
+    period = []
+
     count = if situations.where(klass_id: klass).present?
-              period = attendances.where('realized_at <= ?', situations.first.created_at)
+              attendances.each do |attendance|
+                period << attendance if attendance.realized_at <= situations.first.created_at
+              end
               period_attendances(period)
             else
-              # period = attendances.where('realized_at >= ?', created_at)
-              period = []
               attendances.each do |attendance|
                 period << attendance if attendance.realized_at >= created_at
               end

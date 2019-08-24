@@ -2,5 +2,8 @@
 
 FactoryBot.define do
   factory :situation do
+    klass
+    student
+    active { false }
   end
 end
