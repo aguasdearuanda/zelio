@@ -5,7 +5,8 @@ class Admin::DashboardController < AdminController
     @klasses = Klass.all
     @students = active_students
     @attendances = Attendance.all
-    @justifications = Justification.all.where(status: 'pendente')
+    @pending_justifications = Justification.all.where(status: 'pendente')
+    @total_justifications = Justification.all.count
     @birthday = birthday_list
   end
 
