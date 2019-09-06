@@ -82,6 +82,9 @@
               </tbody>
               <% end %>
             </table>
+            <div><br>
+              <%= link_to 'Criar Justificativa', new_student_justification_path, class: 'btn btn-dark' %>
+            </div>
           </div>
         </div>
       </div>
@@ -96,13 +99,12 @@
               <% if @student.klasses.empty? %>
               <tr>
                 Parabéns, você não tem nenhuma falta. :-) <br><br>
-                <%= link_to 'Ver todas as justificativas', student_justifications_path, class: 'btn btn-info btn-sm' %>
               </tr>
               <% else %>
               <thead>
                 <tr>
                   <th style="width: 5%;">Turma</th>
-                  <th style="width: 5%;">Aula</th>
+                  <th style="width: 5%;">Aulas</th>
                 </tr>
               </thead>
 
