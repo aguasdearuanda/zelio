@@ -1,0 +1,43 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="wrapper-page">
+          <div class="m-t-40 card-box">
+
+            <div class="account-content">
+              <h5 align="center">
+                Termo da Justificativa
+              </h5>
+              <br />
+              <%= simple_form_for [:student, @justification], multipart: true do |f| %>
+              <div class="form-group">
+                <%= f.input :name, readonly: true, input_html: {value: current_user.name}, label: 'Nome' %>
+              </div>
+              <div class="form-group">
+                <%= f.input :email, readonly: true, input_html: {value: current_user.email} %>
+              </div>
+              <div class="form-group">
+                <%= f.input :klass, label: 'Turma', collection: @klasses, as: :select %>
+              </div>
+              <div class="form-group">
+                <%= f.input :date, label: 'Aula justificada', as: :date %>
+              </div>
+              <div class="form-group">
+                <%= f.input :description, as: :text, label: 'Motivo' %>
+              </div>
+              <div class="form-group">
+                <%= f.file_field :upload, accept:'image/*' %>
+              </div>
+              <div class="form-group text-center m-b-0">
+                <%= f.submit 'Enviar', class: 'btn btn-primary' %>
+              </div>
+              <% end %>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
