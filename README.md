@@ -6,7 +6,7 @@
 
 # Zelio Classroom Management
 
-This is a volunteer project to https://www.aguasdearuanda.org.br/ that will control classroom students attendance.
+This is an open source project that will control classroom students attendance.
 
 ## Project
 
@@ -20,6 +20,11 @@ This is a volunteer project to https://www.aguasdearuanda.org.br/ that will cont
 
 * Third section
   - To discuss the e-learning process.
+
+## Diagram
+
+![image](https://user-images.githubusercontent.com/104600/64392807-d441e880-d024-11e9-80bc-410984139cef.png)
+
 
 ## Getting Started
 
@@ -41,15 +46,19 @@ Admin.create!({email: 'your_email', password: 'password'})
 ## Running the tests
 
 ```
-Rspec
+rspec
 ```
 
 ## Contributing
 ```
 Create an issue/feature
-Open a PR :)
+Open a PR and please don't forget to create the specs. :)
 ```
 
 ## Author
 
-* **Davi Thiesse**
+* **Davi Thiesse - @davithss**
+
+## Contributors
+
+* **Breno Moura - @basmoura**
