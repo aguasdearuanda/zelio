@@ -1,3 +1,4 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://travis-ci.org/aguasdearuanda/zelio.svg?branch=master)](https://travis-ci.org/aguasdearuanda/zelio)
 [![Coverage Status](https://coveralls.io/repos/github/aguasdearuanda/zelio/badge.svg?branch=master)](https://coveralls.io/github/aguasdearuanda/zelio?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/36c92d1de2b023758c8f/maintainability)](https://codeclimate.com/github/aguasdearuanda/zelio/maintainability)
@@ -62,3 +63,6 @@ Open a PR and please don't forget to create the specs. :)
 ## Contributors
 
 * **Breno Moura - @basmoura**
+
+## License
+MIT
