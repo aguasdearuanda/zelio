@@ -65,4 +65,4 @@ Open a PR and please don't forget to create the specs. :)
 * **Breno Moura - @basmoura**
 
 ## License
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
