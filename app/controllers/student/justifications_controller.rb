@@ -17,12 +17,13 @@ class Student::JustificationsController < StudentController
   def create
     @justification = Justification.new(justifications_params)
 
-    flash[:notice] = if @justification.save
-                       'Justificativa enviada com sucesso!'
-                     else
-                       'Algo deu errado, tente novamente!'
-                     end
-    redirect_to student_justifications_path
+    if @justification.save
+      flash[:notice] = 'Justificativa enviada com sucesso!'
+      redirect_to student_justification_path(@justification)
+    else
+      flash[:error] = 'Algo deu errado, tente novamente!'
+      render :new
+    end
   end
 
   private
