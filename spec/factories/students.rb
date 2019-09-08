@@ -7,5 +7,7 @@ FactoryBot.define do
     phone { '7998822332' }
     birthday { Faker::Date.birthday(18, 65) }
     klasses { |a| [a.association(:klass)] }
+    password { 'zeliotest' }
+    password_confirmation { 'zeliotest' }
   end
 end
