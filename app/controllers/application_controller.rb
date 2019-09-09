@@ -31,22 +31,20 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource)
-    if resource.is_a? Admin
+    case resource
+    when Admin
       admin_dashboard_path
-    elsif resource.is_a? Student
+    when Student
       student_dashboard_path
-    else
-      super(resource)
     end
   end
 
   def after_sign_out_path_for(resource)
-    if resource == :admin
+    case resource
+    when :admin
       new_admin_session_path
-    elsif resource == :student
+    when :student
       new_student_session_path
-    else
-      super(resource)
     end
   end
 
