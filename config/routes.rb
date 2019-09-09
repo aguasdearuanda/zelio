@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root 'home#index'
+
   namespace :admin, path: 'a' do
     authenticated :admin do
       root 'dashboard#index'
