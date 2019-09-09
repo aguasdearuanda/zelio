@@ -52,9 +52,9 @@ class ApplicationController < ActionController::Base
 
   def authenticate_namespace_scope!
     case user_context
-    when 'a'
+    when 'admin'
       authenticate_admin!
-    when 's'
+    when 'student'
       authenticate_student!
     end
   end
