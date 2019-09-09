@@ -12,7 +12,7 @@
                   <span><%= image_tag('aguasdearuanda', height: '120') %></span>
                 </a>
               </h2>
-              <!-- <h4 class="text-uppercase font-bold m-b-0">Entrar</h4> -->
+              <h5 class="text-uppercase font-bold m-b-0"><%= I18n.t :"devise.resource_name.#{resource_name}" %></h5><br>
             </div>
             <div class="account-content">
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
