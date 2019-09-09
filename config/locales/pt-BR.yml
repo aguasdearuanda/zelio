@@ -249,8 +249,10 @@ pt-BR:
       short: "%d de %B, %H:%M"
       only_date: "%d/%m/%Y"
     pm: ''
-
   devise:
+    resource_name:
+      student: Aluno
+      admin: Administrador
     confirmations:
       confirmed: A sua conta foi confirmada com sucesso.
       new:
