@@ -29,6 +29,7 @@ group :development, :test do
   gem 'faker'
   gem 'pry-nav'
   gem 'pry-rails'
+  gem 'rails-erd'
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
   gem 'rspec_api_documentation'
 end

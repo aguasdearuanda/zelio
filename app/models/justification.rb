@@ -10,4 +10,7 @@ class Justification < ApplicationRecord
     aceito: 'aceito',
     negado: 'negado'
   }
+
+  scope :pending_justifications, ->(current_user) { where('status = ? AND email = ?', 'pendente', current_user.email) }
+  scope :total_justifications, ->(current_user) { where(email: current_user.email).size }
 end

@@ -1,0 +1,23 @@
+<section id="wrapper" class="login-register">
+  <div class="login-box">
+    <div class="white-box">
+      <h3 class="box-title m-b-20">The password was already defined.</h3>
+      <p class="text-justify">If you don't remember and want to reset you password, please fill you email and we will send the password reset instructions.</p>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'form-material', method: :post }) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="row">
+         <div class="col-xs-12">
+           <div class="form-group">
+             <%= f.email_field :email, label:false, autofocus: true, class: "form-control" %>
+           </div>
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-xs-12">
+           <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset Password</button>
+         </div>
+       </div>
+       <% end %>
+    </div>
+  </div>
+</section>

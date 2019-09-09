@@ -1,7 +1,9 @@
 <!-- LOGO -->
 <div class="topbar-left">
-  <a href="/a" class="logo">
-    <span><%= image_tag('aguasdearuanda', height: 65) %></span>
+  <a href="/a"
+     class="logo">
+    <span>
+      <%= image_tag('aguasdearuanda', height: 65) %></span>
     <i>
       <%= image_tag('aguasdearuanda-sm', height: 42) %>
     </i>
@@ -12,7 +14,12 @@
 
   <ul class="list-unstyled topbar-right-menu float-right mb-0">
     <li class="dropdown notification-list hide-phone">
-      <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+      <a class="nav-link dropdown-toggle waves-effect waves-light nav-user"
+         data-toggle="dropdown"
+         href="#"
+         role="button"
+         aria-haspopup="false"
+         aria-expanded="false">
         <i class="mdi mdi-earth"></i>
         Português
         <i class="mdi mdi-chevron-down"></i>
@@ -20,16 +27,23 @@
       <div class="dropdown-menu dropdown-menu-right">
 
         <!-- item-->
-        <a href="javascript:void(0);" class="dropdown-item">
+        <a href="javascript:void(0);"
+           class="dropdown-item">
           English
         </a>
       </div>
     </li>
 
     <li class="dropdown notification-list">
-      <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+      <a class="nav-link dropdown-toggle waves-effect waves-light nav-user"
+         data-toggle="dropdown"
+         href="#"
+         role="button"
+         aria-haspopup="false"
+         aria-expanded="false">
         <%#= image_tag 'users/avatar-1', class: 'rounded-circle' %>
-        <span class="ml-1"><%= current_admin.email %> <i class="mdi mdi-chevron-down"></i> </span>
+        <span class="ml-1">
+          <%= current_user.email %> <i class="mdi mdi-chevron-down"></i> </span>
       </a>
       <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
         <!-- item-->
@@ -38,17 +52,17 @@
         </div>
 
         <!-- item-->
-        <a href="javascript:void(0);" class="dropdown-item notify-item">
+        <a href="javascript:void(0);"
+           class="dropdown-item notify-item">
           <i class="ti-user"></i>
           <span>Minha conta</span>
         </a>
 
         <!-- item-->
-        <%= link_to url_for([:destroy, :admin, :session]), class: 'dropdown-item notify-item', method: :delete do %>
-          <i class="ti-power-off"></i>
-          <span>Sair</span>
+        <%= link_to url_for([:destroy, :"#{user_context}", :session]), class: 'dropdown-item notify-item', method: :delete do %>
+        <i class="ti-power-off"></i>
+        <span>Sair</span>
         <% end %>
-
       </div>
     </li>
   </ul>

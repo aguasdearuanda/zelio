@@ -1,0 +1,62 @@
+<!-- Start content -->
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h4 class="m-b-20 header-title">Detalhes</h4>
+
+        <div class="form-group">
+          <div class="col-md-10">
+            <label>Nome:
+            </label>
+            <%= @justification.name %>
+          </div>
+          <div class="col-md-10">
+            <label>Data da ausência:
+            </label>
+            <tr>
+              <td>
+                <%= @justification.date.strftime("%d/%m/%Y") %>
+              </td>
+            </tr>
+          </div>
+          <% if @justification.upload? %>
+          <div class="col-md-10">
+            <label>Anexo:</label>
+            <tr>
+              <td>
+                <%= link_to 'Abrir', @justification.upload.url %>
+              </td>
+            </tr>
+          </div>
+          <% end %>
+          <div class="col-md-10">
+            <label>Descrição:
+            </label>
+          </div>
+          <div class="col-md-10">
+            <table class="table table-striped">
+              <tbody>
+                <tr class="font-13">
+                  <td>
+                    <%= @justification.description %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-10">
+            <label>Situação:
+            </label>
+            <strong>
+              <%= @justification.status %></strong>
+          </div>
+          <div class="col-md-10">
+            <%= link_to 'Voltar', :back, class: "btn btn-success" %>
+          </div>
+        </div>
+        <!-- container -->
+      </div>
+    </div>
+  </div>
+</div>

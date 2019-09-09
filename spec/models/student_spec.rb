@@ -45,7 +45,7 @@ RSpec.describe Student, type: :model do
 
   describe '#justifications' do
     it 'counts if have any justification with status accepted' do
-      justifications = @student.justifications(@klass.id, @student.email)
+      justifications = @student.check_justifications(@klass.id, @student.email)
       expect(justifications).to be(1)
     end
   end

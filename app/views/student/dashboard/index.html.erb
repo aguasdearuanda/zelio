@@ -1,0 +1,141 @@
+<!-- ============================================================== -->
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+<!-- Start content -->
+<div class="content">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h4 class="header-title m-t-0 m-b-20">Bem-vindo(a)</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card-box widget-inline">
+          <div class="row">
+            <div class="col-lg-3 col-sm-6">
+              <div class="widget-inline-box text-center">
+                <h3 class="m-t-10"><i class="text-primary mdi mdi-access-point-network"></i> <b>
+                    <%= @student.klasses.size || '0' %></b></h3>
+                <p class="text-muted">Turmas</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+              <div class="widget-inline-box text-center">
+                <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b>
+                    <%= @student.attendances.size || '0' %></b></h3>
+                <p class="text-muted">Aulas assistidas</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+              <div class="widget-inline-box text-center b-0">
+                <h3 class="m-t-10"><i class="text-danger mdi mdi-cellphone-link"></i> <b>
+                    <%= @total_justifications %></b></h3>
+                <p class="text-muted">Justificativas</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end row -->
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card-box">
+          <h6 class="m-t-0">Minhas Justificativas</h6>
+          <div class="table-responsive">
+            <table class="table table-sm table-striped">
+              <% if @justifications.empty? %>
+              <tr>
+                Você não tem nenhuma justificativa pendente. <br><br>
+                <%= link_to 'Ver todas as justificativas', student_justifications_path, class: 'btn btn-info btn-sm' %>
+              </tr>
+              <% else %>
+              <thead>
+                <tr>
+                  <th style="width: 5%;">Data</th>
+                  <th style="width: 5%;">Situação</th>
+                  <th style="width: 5%;">Ação</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @justifications.each do |justification| %>
+                <tr>
+                  <td>
+                    <%= justification.date.strftime("%d/%m/%Y") %>
+                  </td>
+                  <td>
+                    <%= label_for_status(justification.status) %>
+                  </td>
+                  <td>
+                    <%= link_to 'Detalhes', student_justification_path(justification), class: 'btn btn-info btn-sm' %>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+              <% end %>
+            </table>
+            <div><br>
+              <%= link_to 'Criar Justificativa', new_student_justification_path, class: 'btn btn-dark' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card-box">
+          <h6 class="m-t-0">Minhas Faltas</h6>
+          <div class="table-responsive">
+            <table class="table table-sm table-striped">
+              <% if @student.klasses.empty? %>
+              <tr>
+                Parabéns, você não tem nenhuma falta. :-) <br><br>
+              </tr>
+              <% else %>
+              <thead>
+                <tr>
+                  <th style="width: 5%;">Turma</th>
+                  <th style="width: 5%;">Aulas</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @student.klasses.each do |klass| %>
+                <tr>
+                  <td>
+                    <%= klass.name %>
+                  </td>
+                  <td>
+                    <%= @student.show_attendances(klass.attendances, klass) %>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+              <% end %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- container -->
+
+  <div class="footer">
+    <%= render 'common/footer' %>
+  </div>
+
+</div>
+
+
+<!-- ============================================================== -->
+<!-- End Right content here -->
+<!-- ============================================================== -->

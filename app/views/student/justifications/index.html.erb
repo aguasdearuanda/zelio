@@ -1,0 +1,98 @@
+<!-- Start content -->
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div align="right"
+           class="col-sm-12">
+        <%= link_to 'Criar Justificativa', new_student_justification_path, class: 'btn btn-success' %>
+      </div>
+      <div class="col-sm-12">
+        <h4 class="header-title m-t-0 m-b-20">Justificativa </h4>
+      </div>
+    </div>
+
+    <div class="row d-block d-sm-none">
+      <div class="col-sm-12">
+        <% if @justifications.blank? %>
+        <em>Não há justificativas cadastradas</em>
+        <% end %>
+        <% @justifications.each do |justification| %>
+        <div class="card text-center"
+             style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= justification.date.strftime("%d/%m/%Y") %>
+            </h5>
+            <p class="card-text">
+              <% if justification.pendente? %>
+              <span class="text-warning"><i class='fa fa-clock-o'></i> Pendente</span>
+              <% end %>
+              <% if justification.aceito? %>
+              <span class="text-success"><i class='fa fa-check'></i> Aceito</span>
+              <% end %>
+              <% if justification.negado? %>
+              <span class="text-danger"><i class='fa fa-times'></i> Negado</span>
+              <% end %>
+            </p>
+            <%= link_to "Visualizar", student_justification_path(justification), class: 'btn btn-sm btn-primary' %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row d-none d-sm-block">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table id="datatable"
+               class="table table-bordered">
+          <thead>
+            <tr>
+              <th style="width: 10%;">Nome</th>
+              <th style="width: 10%;">Data</th>
+              <th style="width: 30%;">Descrição</th>
+              <th style="width: 5%;">Situação</th>
+              <th style="width: 5%;">Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @justifications.nil? %>
+            <tr>
+              <td style="width: 30%;"> Não há justificativas cadastradas </td>
+            </tr>
+            <% else %>
+            <% @justifications.each do |justification| %>
+            <tr>
+              <td>
+                <%= justification.name %>
+              </td>
+              <td>
+                <%= justification.date.strftime("%d-%m-%Y") %>
+              </td>
+              <td>
+                <%= justification.description %>
+              </td>
+              <td>
+                <%= label_for_status(justification.status) %>
+              </td>
+              <td>
+                <%= link_to 'Visualizar', student_justification_path(justification), class: 'btn btn-info btn-sm' %>
+              </td>
+            </tr>
+            <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+  <!-- container -->
+
+  <!-- Footer -->
+  <div class="footer">
+    <%= render 'common/footer' %>
+  </div>
+  <!-- END Footer -->
+</div>

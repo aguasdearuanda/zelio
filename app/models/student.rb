@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Student < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable
   has_and_belongs_to_many :klasses
   has_and_belongs_to_many :attendances
   has_many :situations
@@ -62,7 +66,11 @@ class Student < ApplicationRecord
     period
   end
 
-  def justifications(klass, email)
-    Justification.where('klass = ? AND email = ?', klass, email).count
+  def check_justifications(klass, email)
+    Justification.where('klass = ? AND email = ?', klass, email).size
+  end
+
+  def justifications
+    Justification.all.where(email: email)
   end
 end

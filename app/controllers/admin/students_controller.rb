@@ -32,6 +32,7 @@ class Admin::StudentsController < AdminController
 
   def update
     @student = Student.find(params[:id])
+
     if @student.update(student_params)
       flash[:success] = 'Aluno atualizado com sucesso!'
       redirect_to admin_students_path
@@ -44,6 +45,7 @@ class Admin::StudentsController < AdminController
 
   def student_params
     params.require(:student).permit(:name, :birthday, :email, :phone,
-                                    :active, klass_ids: [])
+                                    :active, :password, :password_confirmation,
+                                    klass_ids: [])
   end
 end
