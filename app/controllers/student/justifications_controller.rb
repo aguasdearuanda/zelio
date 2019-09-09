@@ -2,7 +2,7 @@
 
 class Student::JustificationsController < StudentController
   def index
-    @justifications = Justification.all.where(email: current_user.email)
+    @justifications = current_user.justifications
   end
 
   def show

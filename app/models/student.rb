@@ -66,7 +66,11 @@ class Student < ApplicationRecord
     period
   end
 
-  def justifications(klass, email)
-    Justification.where('klass = ? AND email = ?', klass, email).count
+  def check_justifications(klass, email)
+    Justification.where('klass = ? AND email = ?', klass, email).size
+  end
+
+  def justifications
+    Justification.all.where(email: email)
   end
 end
