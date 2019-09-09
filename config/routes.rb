@@ -30,8 +30,6 @@ Rails.application.routes.draw do
                                                   confirmations: 'student/confirmation' }
   devise_for :admins, path: 'a', controllers: { sessions: 'sessions' }
 
-  root 'devise/sessions#new', as: :unauthenticated_root
-
   resources :justifications, path: 'justificativa', path_names: { new: 'novo' },
                                                     only: %i[new create]
 end
