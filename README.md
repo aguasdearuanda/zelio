@@ -11,13 +11,24 @@ This is an open source project that will control classroom students attendance.
 
 ## Project
 
-* First section (Work in progress)
-  - Check it out what we have been doing and what we still need to do in order to finish this section. https://github.com/aguasdearuanda/zelio/projects/1
+* First section (Done)
+  - Admin Section
+    - Create/Manage Student, Classes(as: Attendances), Groups(as: klasses), Teacher, Justifications;
+    - Added a possibility to disable the student to a group and keep it his history;
+    - Counting student no attendances;
+    - Corner Case: If the student has been created a justification for a specific class and it was accepted by the administrator, his no attendance won't be counted on the total of no attendances but we'll keep on the student's history as a no attendance class;
+    - On the dashboard it's possible to see the total of justifications, active students, groups, and attendances;
+    
+  - Student Section
+    - On the dasboard the student gonna see his justifications and no attendances;
+    - Create/View the justifications;
 
-* Second section
-  - Discuss the purpose of creating a hybrid mobile app
-  - Create a Student session to see their attendance's history and payment as well.
+* Second section (Work in progress)
+  - Gonna be created two new applications: a React Native Web View project to Android and a Swift project;
+  - Create a payment module to Admin;
   PS, the payment will not be made through the application, the administrator will just update the payment status to paid.
+  - Create a student calendar;
+  - Check it out what we have been doing and what we still need to do in order to finish this section. https://github.com/aguasdearuanda/zelio/projects/1
 
 * Third section
   - To discuss the e-learning process.
