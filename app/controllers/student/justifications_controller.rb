@@ -17,11 +17,11 @@ class Student::JustificationsController < StudentController
   def create
     @justification = Justification.new(justifications_params)
 
-    if @justification.save
+    if verify_recaptcha(model: @justification) && @justification.save
       flash[:notice] = 'Justificativa enviada com sucesso!'
       redirect_to student_justification_path(@justification)
     else
-      flash[:error] = 'Algo deu errado, tente novamente!'
+      flash[:error] = 'Algo deu errado, por favor verifique os campos e o campo de segurança!'
       render :new
     end
   end

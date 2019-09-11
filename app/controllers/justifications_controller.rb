@@ -9,10 +9,10 @@ class JustificationsController < ApplicationController
   def create
     @justification = Justification.new(justifications_params)
 
-    flash[:notice] = if @justification.save
+    flash[:notice] = if verify_recaptcha(model: @justification) && @justification.save
                        'Justificativa enviada com sucesso!'
                      else
-                       'Algo deu errado, tente novamente!'
+                       'Algo deu errado, por favor verifique os campos e o campo de segurança!'
                      end
     redirect_to new_justification_path
   end
