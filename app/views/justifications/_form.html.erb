@@ -16,6 +16,11 @@
               <h5 align="center">
                 Termo da Justificativa
               </h5>
+              <% if flash[:error] %>
+                <div class="alert alert-danger" role="alert">
+                  <b>Atenção!</b> <%= flash[:error] %>
+                </div>
+              <% end %>
               <br/>
               <%= simple_form_for [@justification], multipart: true do |f| %>
               <div class="form-group">
@@ -35,6 +40,10 @@
               </div>
               <div class="form-group">
                 <%= f.file_field :upload, accept:'image/*' %>
+              </div>
+              <div class="form-group">
+                <label>Verificação de Segurança</label>
+                 <%= recaptcha_tags %>
               </div>
               <div class="form-group text-center m-b-0">
                 <%= f.submit 'Enviar', class: 'btn btn-primary waves-effect waves-light' %>
