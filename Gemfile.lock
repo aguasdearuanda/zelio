@@ -68,6 +68,8 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
+    bugsnag (6.12.1)
+      concurrent-ruby (~> 1.0)
     builder (3.2.3)
     capybara (3.28.0)
       addressable
@@ -361,6 +363,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk-s3 (~> 1)
   bootsnap (>= 1.1.0)
+  bugsnag (~> 6.12)
   capybara (>= 3.24.0)
   chromedriver-helper (>= 2.1.1)
   coffee-rails (~> 4.2, >= 4.2.2)

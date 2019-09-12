@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 gem 'aws-sdk-s3', '~> 1'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bugsnag', '~> 6.12'
 gem 'coffee-rails', '~> 4.2', '>= 4.2.2'
 gem 'coveralls', require: false
 gem 'devise', '>= 4.7.1'
