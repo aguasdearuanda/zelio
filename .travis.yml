@@ -1,13 +1,16 @@
 language: ruby
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec rspec
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec
 before_script:
-  - psql -c 'create database zelio_test;' -U postgres
+- psql -c 'create database zelio_test;' -U postgres
 rvm:
-  - 2.6.3
+- 2.6.3
 services:
-  - postgresql
+- postgresql
 before_install:
-  - gem update --system
+- gem update --system
+notifications:
+  slack:
+    secure: p26sBsKDQeXQ39CrJyX49ohaJw3w9v0d4ZGCQVUB8xvrC9t/sOoqk1qrc+Neqtxp0g+u0SW0UDuVm44IW7uRCvxmnL/Rfgu5gg1LomLrgVmUAQDshbXFWdrSaflo73YpxvfAV16TwCiOXqFDw6gXrE1HNBqFT3kggQdE3ON+oVhiwf7GR3H6mRaCmkqfEDImlBj/a5qJh5runKJrneHC/K3mZCcZ1zll+Z/27hT2c9i9VlFmlopA0xyWfCOYaJhBLJ/cGS2lpOMdnkOjmruRtFNEeDS5gp6QxVnNFeN5EMmbdcEnzdxu0Cu/BXc3/gZXnybOj5qYIxxF+VMpkodTi26rph4Hli6t+RM73jB/DHEYempEO7ozjRm2y6LdQcOZryytgK9FFo4bIvfPMGYWKsekywRDjJHkUIcAMD7wyopw/N/LqGrUnLzdbwpeQX7DdkzwBP7IgE0PdVhD1/jRcUMXGN2FRyE+JkFFGNq2hfNHWCkj9tZdtECol/kXRvzjRjPPuFUob4GrM+kXhSKCb9ITf7ECpV//j/FMUD1E2BXL5zYLzzA+QgBsTwPiRcyj3E4ih87Th1n1KVQ+rAfzWrcspoIe9t/0AwT4IoZU8baXTVz6f20iaq6HTQYl+5CT79Z4JpKGyTK5D+gjCQpoVazp6VpY2c7NJ/OVKWFMtsQ=
