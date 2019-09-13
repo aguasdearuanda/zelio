@@ -15,7 +15,7 @@
             <label>Data da ausência:
             </label>
             <tr>
-              <td><%= @justification.date %></td>
+              <td><%= @justification.date.strftime("%d-%m-%Y") %></td>
             </tr>
           </div>
           <% if @justification.upload? %>
