@@ -4,79 +4,82 @@
 <!-- Start content -->
 <div class="content">
   <div class="container-fluid">
-
-    <div class="row">
-      <div class="col-sm-12">
-        <h4 class="header-title m-t-0 m-b-20">Bem-vindo(a)</h4>
-      </div>
-    </div>
-
-
     <div class="row">
       <div class="col-sm-12">
         <div class="card-box widget-inline">
           <div class="row">
             <div class="col-lg-3 col-sm-6">
               <div class="widget-inline-box text-center">
-                <h3 class="m-t-10"><i class="text-primary mdi mdi-access-point-network"></i> <b><%= @klasses.count || '0' %></b></h3>
+                <h3 class="m-t-10"><i class="text-primary mdi mdi-access-point-network"></i> <b>
+                    <%= @klasses.count || '0' %></b></h3>
                 <p class="text-muted">Turmas</p>
               </div>
             </div>
 
             <div class="col-lg-3 col-sm-6">
               <div class="widget-inline-box text-center">
-                <h3 class="m-t-10"><i class="text-custom mdi mdi-airplay"></i> <b><%= @students %></b></h3>
+                <h3 class="m-t-10"><i class="text-custom mdi mdi-airplay"></i> <b>
+                    <%= @students %></b></h3>
                 <p class="text-muted">Alunos ativos</p>
               </div>
             </div>
 
             <div class="col-lg-3 col-sm-6">
               <div class="widget-inline-box text-center">
-                <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b><%= @attendances.count || '0' %></b></h3>
+                <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b>
+                    <%= @attendances.count || '0' %></b></h3>
                 <p class="text-muted">Aulas ministradas</p>
               </div>
             </div>
 
             <div class="col-lg-3 col-sm-6">
               <div class="widget-inline-box text-center b-0">
-                <h3 class="m-t-10"><i class="text-danger mdi mdi-cellphone-link"></i> <b><%= @total_justifications %></b></h3>
+                <h3 class="m-t-10"><i class="text-danger mdi mdi-cellphone-link"></i> <b>
+                    <%= @total_justifications %></b></h3>
                 <p class="text-muted">Justificativas</p>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
-    <!--end row -->
 
     <div class="row">
       <div class="col-sm-12">
         <div class="card-box">
-          <h6 class="m-t-0">Justificativa de faltas</h6>
+          <h6 class="m-t-0">Justificativas</h6>
           <div class="table-responsive">
             <table class="table table-sm table-striped">
+              <% if @pending_justifications.empty? %>
+              <tr>
+                Não há justificativa pendente. <br><br>
+                <%= link_to 'Ver todas as justificativas', admin_justifications_path, class: 'btn btn-info btn-sm' %>
+              </tr>
+              <% else %>
               <thead>
                 <tr>
-                  <th style="width: 10%;">Nome</th>
-                  <th style="width: 5%;">Data</th>
-                  <th style="width: 30%;">Descrição</th>
+                  <th style="width: 5%;">Nome</th>
                   <th style="width: 5%;">Situação</th>
                   <th style="width: 5%;">Ação</th>
                 </tr>
               </thead>
 
               <tbody>
-                  <% @pending_justifications.each do |justification| %>
-                  <tr>
-                    <td><%= justification.name %></td>
-                    <td><%= justification.date.strftime("%d-%m-%Y") %></td>
-                    <td><%= justification.description %></td>
-                    <td><%= label_for_status(justification.status) %></td>
-                    <td><%= link_to 'Detalhes', admin_justification_path(justification), class: 'btn btn-info btn-sm' %></td>
-                  </tr>
-                  <% end %>
+                <% @pending_justifications.each do |justification| %>
+                <tr>
+                  <td>
+                    <%= justification.name %>
+                  </td>
+                  <td>
+                    <%= label_for_status(justification.status) %>
+                  </td>
+                  <td>
+                    <%= link_to 'Visualizar', admin_justification_path(justification), class: 'btn btn-info btn-sm' %>
+                  </td>
+                </tr>
+                <% end %>
               </tbody>
+              <% end %>
             </table>
           </div>
         </div>
@@ -86,9 +89,16 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="card-box">
-          <h6 class="m-t-0">Aniversariantes do mês de <%= I18n.t('date.month_names')[Date.today.month]%></h6>
+          <h6 class="m-t-0">Aniversariantes do mês de
+            <%= I18n.t('date.month_names')[Date.today.month]%>
+          </h6>
           <div class="table-responsive">
             <table class="table table-sm table-striped">
+              <% if @birthday.empty? %>
+              <tr>
+                Nenhum aniversariante este mês. :-( <br><br>
+              </tr>
+              <% else %>
               <thead>
                 <tr>
                   <th style="width: 10%;">Nome</th>
@@ -97,27 +107,29 @@
               </thead>
 
               <tbody>
-                  <% @birthday.each do |student| %>
-                  <tr>
-                    <td><%= student.name %></td>
-                    <td><%= student&.birthday.strftime("%d-%m-%Y") %></td>
-                  </tr>
-                  <% end %>
+                <% @birthday.each do |student| %>
+                <tr>
+                  <td>
+                    <%= student.name %>
+                  </td>
+                  <td>
+                    <%= student&.birthday.strftime("%d-%m") %>
+                  </td>
+                </tr>
+                <% end %>
               </tbody>
+              <% end %>
             </table>
           </div>
         </div>
       </div>
     </div>
-
   </div> <!-- container -->
 
   <div class="footer">
     <%= render 'common/footer' %>
   </div>
-
 </div>
-
 
 <!-- ============================================================== -->
 <!-- End Right content here -->
