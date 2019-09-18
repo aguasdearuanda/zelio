@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::JustificationsController < AdminController
-  before_action :set_justification, except: %i[index new create]
+  before_action :set_justification, except: %i[index]
 
   def index
     @justifications = Justification.all
