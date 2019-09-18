@@ -1,35 +1,30 @@
 # frozen_string_literal: true
 
 class Admin::JustificationsController < AdminController
+  before_action :set_justification, except: %i[index new create]
+
   def index
     @justifications = Justification.all
   end
 
-  def show
-    @justification = Justification.find(params[:id])
-  end
-
   def edit
-    @justification = Justification.find(params[:id])
     render :edit
   end
 
   def update
-    @justification = Justification.find(params[:id])
     if @justification.update(justification_params)
       flash[:notice] = 'Justificativa atualizada com sucesso!'
       redirect_to admin_justifications_path
     else
       flash[:notice] = 'Algo errado aconteceu, tente novamente!'
-      redirect_to admin_justification_path(@justification)
+      render :edit
     end
   end
 
   def destroy
-    @justification = Justification.find(params[:id])
     @justification.destroy
 
-    flash['success'] = 'Attendance was removed successfully.'
+    flash[:notice] = 'Justificativa apagada com sucesso.'
     redirect_to admin_justifications_path
   end
 
@@ -37,5 +32,9 @@ class Admin::JustificationsController < AdminController
 
   def justification_params
     params.require(:justification).permit(:status)
+  end
+
+  def set_justification
+    @justification = Justification.find(params[:id])
   end
 end

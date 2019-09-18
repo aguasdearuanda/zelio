@@ -33,16 +33,45 @@ RSpec.describe 'Admin justifications', type: :request do
   end
 
   describe '#update' do
-    it 'updates the justification status' do
-      put admin_justification_path(justifications.first.id), params: { justification: { status: 'aceito' } }
-      expect(justifications.first.status).to eq('aceito')
-      expect(response).to redirect_to admin_justifications_path
+    context 'with valid attributes' do
+      before do
+        patch admin_justification_path(justifications.first.id),
+              params: { justification: { status: 'aceito' } }
+      end
+
+      it 'changes the justification`s attribute' do
+        justifications.first.reload
+        expect(justifications.first.status).to eq('aceito')
+      end
+
+      it 'redirects to justifications#index' do
+        expect(response).to redirect_to admin_justifications_path
+      end
+    end
+
+    context 'with invalid attributes' do
+      it 'render :edit template' do
+        patch admin_justification_path(justifications.first.id),
+              params: { justification: { status: nil } }
+        expect(response).to render_template(:edit)
+      end
+    end
+  end
+
+  describe '#edit' do
+    it 'renders a justification to edit template' do
+      get edit_admin_justification_path(justifications.first.id)
+      expect(response).to render_template :edit
     end
   end
 
   describe '#destroy' do
     it 'deletes a justification' do
-      delete admin_justification_path(justifications.first.id)
+      expect { delete admin_justification_path(justifications.first) }.to change(Justification, :count).by(2)
+    end
+
+    it 'redirects to justifications#index' do
+      delete admin_justification_path(justifications.first)
       expect(response).to redirect_to admin_justifications_path
     end
   end

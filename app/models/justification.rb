@@ -4,7 +4,7 @@ class Justification < ApplicationRecord
   has_attached_file :upload
 
   validates_attachment_content_type :upload, content_type: %r{\Aimage\/.*\Z}
-  validates :name, :date, :email, :description, presence: true
+  validates :name, :date, :email, :description, :status, presence: true
   enum status: {
     pendente: 'pendente',
     aceito: 'aceito',
