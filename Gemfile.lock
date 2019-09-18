@@ -64,6 +64,9 @@ GEM
     aws-sigv4 (1.1.0)
       aws-eventstream (~> 1.0, >= 1.0.2)
     backports (3.15.0)
+    barnes (0.0.7)
+      multi_json (~> 1)
+      statsd-ruby (~> 1.1)
     bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.4)
@@ -317,6 +320,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    statsd-ruby (1.4.0)
     term-ansicolor (1.7.1)
       tins (~> 1.0)
     terrapin (0.6.0)
@@ -362,6 +366,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk-s3 (~> 1)
+  barnes
   bootsnap (>= 1.1.0)
   bugsnag (~> 6.12)
   capybara (>= 3.24.0)
