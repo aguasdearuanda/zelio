@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       end
       # resources :situations
       resources :teachers
-      resources :justifications, only: %i[index show edit update]
+      resources :justifications, only: %i[index show edit update destroy]
     end
   end
 

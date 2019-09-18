@@ -7,5 +7,6 @@
       </div>
       <%= f.submit 'Salvar', class: "btn btn-success" %>
       <%= link_to 'Voltar', :back, class: "btn btn-link" %>
+      <%= link_to 'Apagar', admin_justification_path(params[:id]), data: { confirm: 'Tem certeza?' }, method: :delete, class: "btn btn-danger" %>
     <% end %>
   </div>
