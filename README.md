@@ -7,24 +7,24 @@
 
 # Zelio Classroom Management
 
-This is an open source project that will control classroom students attendance.
+This is an open source project that aims to control classroom students attendance.
 
 ## Project
 
 * First section (Done)
   - Admin Section
-    - Create/Manage Student, Classes(as: Attendances), Groups(as: klasses), Teacher, Justifications;
-    - Added a possibility to disable the student to a group and keep it his history;
-    - Counting student no attendances;
-    - Corner Case: If the student has been created a justification for a specific class and it was accepted by the administrator, his no attendance won't be counted on the total of no attendances but we'll keep on the student's history as a no attendance class;
-    - On the dashboard it's possible to see the total of justifications, active students, groups, and attendances;
+    - Create/Manage Student's profiles , Classes data (Eg.: attendance), Groups (Eg.: classes), Teachers' profiles, Justifications;
+    - Add a possibility to remove a student from a group and keep it his/her history;
+    - Registering students' absences;
+    - Corner Case: If the student has been created a justification for a specific class and it was accepted by the administrator, his/her absence won't be taken into consideration on the total of absencess but it will be kept on the student's records an absence in class;
+    - On the dashboard it's possible to see the total number of justifications, active students, groups, and absences;
     
   - Student Section
-    - On the dasboard the student gonna see his justifications and no attendances;
+    - On the dasboard the student will be able see his/her justifications and no attendances;
     - Create/View the justifications;
 
 * Second section (Work in progress)
-  - Gonna be created two new applications: a React Native Web View project to Android and a Swift project;
+  - It will be created a new applications using Flutter;
   - Create a payment module to Admin;
   PS, the payment will not be made through the application, the administrator will just update the payment status to paid.
   - Create a student calendar;
