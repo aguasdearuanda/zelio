@@ -8,9 +8,11 @@ RSpec.describe 'Teachers management', type: :request do
   end
 
   let(:admin) { create(:admin) }
+
   describe '#index' do
     context 'when has group' do
       let(:teachers) { create_list(:teacher, 3) }
+
       it 'lists all groups' do
         get admin_students_path
         expect(teachers.count).to be_equal(3)
@@ -29,6 +31,7 @@ RSpec.describe 'Teachers management', type: :request do
 
   describe '#update' do
     let(:teacher) { create(:teacher, name: 'Shevchenko Test') }
+
     it 'changes student name' do
       teacher.update(name: 'Davi Thiesse')
       expect(teacher.name).to eq('Davi Thiesse')
