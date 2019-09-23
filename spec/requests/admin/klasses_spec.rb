@@ -70,8 +70,13 @@ RSpec.describe 'Klasses management', type: :request do
     end
   end
 
-  describe '#delete' do
-    it 'deletes a group' do
+  describe 'DELETE #destroy' do
+    it 'deletes a class' do
+      klass = create(:klass)
+      expect { delete admin_klass_path(klass) }.to change(Klass, :count).by(-1)
+    end
+
+    it 'redirects to klasses#index' do
       delete admin_klass_path(klass)
       expect(response).to redirect_to admin_klasses_path
     end
@@ -86,7 +91,7 @@ RSpec.describe 'Klasses management', type: :request do
 
     it 'disable student for the specific group class' do
       klass = student.klasses.first
-      get admin_klass_disable_student_path(klass.id, student.id)
+      get admin_klass_disable_student_path(klass_id: klass.id, student_id: student.id)
       expect(response).to redirect_to admin_klasses_path
     end
   end
