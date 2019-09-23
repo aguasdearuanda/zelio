@@ -2,13 +2,13 @@
 
 class Admin::KlassesController < AdminController
   layout 'internal'
+  before_action :set_klass, except: %i[index new create disable_student]
 
   def index
     @klasses = Klass.all
   end
 
   def show
-    @klass = Klass.find(params[:id])
     @attendances = @klass.attendances.all
   end
 
@@ -29,12 +29,10 @@ class Admin::KlassesController < AdminController
   end
 
   def edit
-    @klass = Klass.find(params[:id])
+    render :edit
   end
 
   def update
-    @klass = Klass.find(params[:id])
-
     if @klass.update(klass_params)
       flash[:success] = 'The klass was updated succesfully.'
       redirect_to admin_klasses_path
@@ -50,7 +48,6 @@ class Admin::KlassesController < AdminController
   end
 
   def destroy
-    @klass = Klass.find(params[:id])
     @klass.destroy
 
     flash['success'] = 'klass was removed successfully.'
@@ -61,5 +58,9 @@ class Admin::KlassesController < AdminController
 
   def klass_params
     params.require(:klass).permit(:name, teacher_ids: [], student_ids: [])
+  end
+
+  def set_klass
+    @klass = Klass.find(params[:id])
   end
 end
