@@ -11,6 +11,11 @@ class Student < ApplicationRecord
   validates :name, presence: true
 
   def count_presence(attendances, klass)
+    period = check_situations(attendances, klass)
+    period_attendances(period)
+  end
+
+  def check_situations(attendances, klass)
     period = []
 
     if situations.where(klass_id: klass).present?
@@ -22,7 +27,8 @@ class Student < ApplicationRecord
         period << attendance if attendance.realized_at >= created_at
       end
     end
-    period_attendances(period)
+
+    period
   end
 
   def period_attendances(period)
@@ -40,25 +46,11 @@ class Student < ApplicationRecord
 
   def show_attendances(attendances, klass)
     attendance = []
-    period = check_presence(attendances, klass)
+    period = check_situations(attendances, klass)
     period.each do |klasses|
       attendance << klasses.name if klasses.students.where(id: id).empty?
     end
     attendance.join('<br>').html_safe
-  end
-
-  def check_presence(attendances, klass)
-    period = []
-    if situations.where(klass_id: klass).present?
-      attendances.each do |attendance|
-        period << attendance if attendance.realized_at <= situations.first.created_at
-      end
-    else
-      attendances.each do |attendance|
-        period << attendance if attendance.realized_at >= created_at
-      end
-    end
-    period
   end
 
   def check_justifications(klass, email)
