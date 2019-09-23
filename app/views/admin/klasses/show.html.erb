@@ -50,26 +50,20 @@
                         <%= student.situations.where(klass_id: @klass.id).empty? ? label_for_klass_student_status('ativo') : label_for_klass_student_status('desativado') %>
                       </td>
                       <td>
-
                         <div class="col-lg-12">
-                          <div class="panel-body">
-                            <%= student.show_attendances(@attendances, @klass.id) %><br>-<br>
-                            Faltas:
-                            <strong><%= count = student.count_presence(@attendances, @klass.id) %></strong>
-                            <br>-<br>
-
-                            Justificativas Aceitas:
-                            <strong>
-                              <%= justification = student.check_justifications(@klass.id, student.email) %>
-                            </strong>
-                            <br>-<br>
-
-                            <font color="red">
-                              Total:
-                              <strong><%= count - justification %></strong>
-                            </font>
-                          </div>
-                          <!-- </div> -->
+                          <!-- Button trigger modal -->
+                            <button type="button" class="btn-sm" data-toggle="modal" data-target="#absenceModal">
+                              Visualizar
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="absenceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <%= render partial: 'absences', locals: { student: student }  %>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- Modal -->
                         </div>
                       </td>
                     </tr>
