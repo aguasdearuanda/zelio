@@ -66,16 +66,14 @@ RSpec.describe 'Admin justifications', type: :request do
   end
 
   describe 'DELETE #destroy' do
-    before do
-      @justification = create(:justification)
-    end
-
     it 'deletes a justification' do
-      expect { delete admin_justification_path(@justification) }.to change(Justification, :count).by(-1)
+      justification = create(:justification)
+      expect { delete admin_justification_path(justification) }.to change(Justification, :count).by(-1)
     end
 
     it 'redirects to justifications#index' do
-      delete admin_justification_path(@justification)
+      justification = create(:justification)
+      delete admin_justification_path(justification)
       expect(response).to redirect_to admin_justifications_path
     end
   end

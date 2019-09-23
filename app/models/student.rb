@@ -11,23 +11,18 @@ class Student < ApplicationRecord
   validates :name, presence: true
 
   def count_presence(attendances, klass)
-    count = 0
     period = []
 
-    count = if situations.where(klass_id: klass).present?
-              attendances.each do |attendance|
-                period << attendance if attendance.realized_at <= situations.first.created_at
-              end
-              period_attendances(period)
-            else
-              attendances.each do |attendance|
-                period << attendance if attendance.realized_at >= created_at
-              end
-              period_attendances(period)
-            end
-    count
-    # count = (count.to_f/attendances.size.to_f*100)
-    # convert_to_percentage(count)
+    if situations.where(klass_id: klass).present?
+      attendances.each do |attendance|
+        period << attendance if attendance.realized_at <= situations.first.created_at
+      end
+    else
+      attendances.each do |attendance|
+        period << attendance if attendance.realized_at >= created_at
+      end
+    end
+    period_attendances(period)
   end
 
   def period_attendances(period)

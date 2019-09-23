@@ -5,13 +5,15 @@ require 'rails_helper'
 RSpec.describe 'Students management', type: :request do
   before do
     sign_in admin
-    @student = create(:student)
   end
 
   let(:admin) { create(:admin) }
+  let(:student) { create(:student) }
+
   describe '#index' do
     context 'when has group' do
       let(:students) { create_list(:student, 3) }
+
       it 'lists all groups' do
         get admin_students_path
         expect(students.count).to be_equal(3)
@@ -21,7 +23,7 @@ RSpec.describe 'Students management', type: :request do
 
   describe '#show' do
     it 'shows a student' do
-      get admin_student_path(@student.id)
+      get admin_student_path(student.id)
       expect(response).to be_successful
     end
   end
@@ -49,20 +51,20 @@ RSpec.describe 'Students management', type: :request do
 
   describe '#edit' do
     it 'edit a student' do
-      get edit_admin_student_path(@student.id)
+      get edit_admin_student_path(student.id)
       expect(response).to render_template :edit
     end
   end
 
   describe '#update' do
     it 'update a student with success' do
-      put admin_student_path(id: @student.id),
+      put admin_student_path(id: student.id),
           params: { student: { name: 'Bruce Lee' } }
       expect(response).to redirect_to admin_students_path
     end
 
     it 'will redirect to edit page if something went wrong' do
-      put admin_student_path(id: @student.id),
+      put admin_student_path(id: student.id),
           params: { student: { name: '' } }
       expect(response).to render_template :edit
     end

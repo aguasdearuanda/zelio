@@ -1,3 +1,5 @@
+require: rubocop-rspec
+
 AllCops:
   Exclude:
     - bin/**/*
@@ -20,8 +22,8 @@ ClassAndModuleChildren:
   Enabled: false
 
 # Prefer `has_many :through` to `has_and_belongs_to_many`.
-HasAndBelongsToMany:
-  Enabled: false
+# HasAndBelongsToMany:
+#   Enabled: false
 
 Style/SignalException:
   EnforcedStyle: only_raise
@@ -68,9 +70,8 @@ Lint/AmbiguousBlockAssociation:
 
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
+# Rails/SkipsModelValidations:
+#   Enabled: false
 
-Rails/SkipsModelValidations:
-  Enabled: false
-
-Rails/HasManyOrHasOneDependent:
-  Enabled: false
+# Rails/HasManyOrHasOneDependent:
+#   Enabled: false
