@@ -20,15 +20,15 @@ This is an open source project that aims to control classroom students attendanc
     - On the dashboard it's possible to see the total number of justifications, active students, groups, and absences;
     
   - Student Section
-    - On the dasboard the student will be able see his/her justifications and no attendances;
+    - On the dasboard the student will be able see his/her justifications and absences;
     - Create/View the justifications;
 
 * Second section (Work in progress)
-  - It will be created a new applications using Flutter;
+  - New mobile applications will be launched using Flutter technology;
   - Create a payment module to Admin;
-  PS, the payment will not be made through the application, the administrator will just update the payment status to paid.
-  - Create a student calendar;
-  - Check it out what we have been doing and what we still need to do in order to finish this section. https://github.com/aguasdearuanda/zelio/projects/1
+     - The payment will not be made through the application, the administrator will just update the payment status to paid if so.
+  - Create students' calendar;
+  - Check out what the team has being doing and what we still need to do in order to finish this section. https://github.com/aguasdearuanda/zelio/projects/1
 
 * Third section
   - To discuss the e-learning process.
