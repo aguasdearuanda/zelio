@@ -52,14 +52,15 @@
                       <td>
                         <div class="col-lg-12">
                           <!-- Button trigger modal -->
-                            <button type="button" class="btn-sm" data-toggle="modal" data-target="#absenceModal">
+                            <button type="button" class="btn-sm" data-toggle="modal" data-target=<%="#absenceModal#{student.id}" %>>
                               Visualizar
                             </button>
+
                             <!-- Modal -->
-                            <div class="modal fade" id="absenceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade"  tabindex="-1" role="dialog" aria-hidden="true" id=<%= "absenceModal#{student.id}" %>>
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content">
-                                  <%= render partial: 'absences', locals: { student: student }  %>
+                                  <%= render partial: 'absences', locals: { student: student, attendances: @attendances, klass: @klass }, cached: true  %>
                                 </div>
                               </div>
                             </div>
