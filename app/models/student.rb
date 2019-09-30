@@ -54,7 +54,7 @@ class Student < ApplicationRecord
   end
 
   def check_justifications(klass, email)
-    Justification.where('klass = ? AND email = ?', klass, email).size
+    Justification.where('klass = ? AND email = ? AND status = ?', klass, email, 'aceito').size
   end
 
   def justifications
