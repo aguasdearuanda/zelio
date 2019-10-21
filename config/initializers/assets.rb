@@ -20,4 +20,4 @@ Rails.application.config.assets.paths << Rails.root.join('app',
                                                          'fonts')
 Rails.application.config.assets.precompile += %w[internal.js
                                                 internal.css
-                                                internal/absenses-modal.js]
+                                                internal/absences-modal.js]

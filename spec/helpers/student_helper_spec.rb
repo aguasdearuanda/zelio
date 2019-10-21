@@ -37,7 +37,7 @@ RSpec.describe StudentHelper, type: :helper do
     end
   end
 
-  describe '#absenses' do
+  describe '#absences' do
     let(:attendances)  { create_list(:attendance, 3) }
     let(:student) { attendances.first.students.first }
     let(:klass) { attendances.first.klasses.first }
