@@ -95,4 +95,13 @@ RSpec.describe 'Klasses management', type: :request do
       expect(response).to redirect_to admin_klasses_path
     end
   end
+
+  describe '#absences' do
+    let(:student) { create(:student) }
+
+    it 'load the student data' do
+      get admin_klass_absences_path(student.klasses.first, student), xhr: true
+      expect(response).to render_template('absences')
+    end
+  end
 end
