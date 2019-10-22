@@ -26,34 +26,4 @@ RSpec.describe StudentHelper, type: :helper do
         '<span class="btn btn-danger btn-sm btn-rounded">Desativado</span>'
     end
   end
-
-  describe '#klasses' do
-    let(:attendances) { create_list(:attendance, 3) }
-    let(:student) { attendances.first.students.first }
-    let(:klass) { attendances.first.klasses.first }
-
-    it do
-      expect(helper.klasses(student, attendances, klass)).not_to be_blank
-    end
-  end
-
-  describe '#absences' do
-    let(:attendances)  { create_list(:attendance, 3) }
-    let(:student) { attendances.first.students.first }
-    let(:klass) { attendances.first.klasses.first }
-
-    it do
-      expect(helper.absences(student, attendances, klass)).to be_an_instance_of(Integer)
-    end
-  end
-
-  describe '#justifications' do
-    let(:attendances) { create_list(:attendance, 3) }
-    let(:student) { attendances.first.students.first }
-    let(:klass) { attendances.first.klasses.first }
-
-    it do
-      expect(helper.justifications(student, klass)).to be_an_instance_of(Integer)
-    end
-  end
 end
