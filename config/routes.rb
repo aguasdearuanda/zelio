@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :klasses do
         resources :attendances, controller: '/admin/attendances'
         get 'disable_student', to: 'klasses#disable_student'
+        get 'absences/:student_id', to: 'klasses#absences', as: :absences
       end
       # resources :situations
       resources :teachers

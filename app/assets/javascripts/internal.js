@@ -18,3 +18,4 @@
 //= require internal/datatables/buttons.print.min
 //= require internal/datatables/dataTables.responsive.min
 //= require internal/datatables
+//= require internal/datatables-without-buttons
