@@ -27,11 +27,10 @@
       </a>
       <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
         <!-- item-->
-        <!-- <a href="javascript:void(0);"
-           class="dropdown-item notify-item">
-          <i class="ti-user"></i>
-          <span>Minha conta</span>
-        </a> -->
+          <%= link_to url_for([:edit, :"#{user_context}", :registration]), class: 'dropdown-item notify-item' do %>
+            <i class="ti-user"></i>
+            <span>Alterar Senha</span>
+          <% end %>
 
         <!-- item-->
         <%= link_to url_for([:destroy, :"#{user_context}", :session]), class: 'dropdown-item notify-item', method: :delete do %>

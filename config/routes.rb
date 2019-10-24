@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :students, path: 's', controllers: { sessions: 'sessions',
+                                                  registrations: 'registrations',
                                                   confirmations: 'student/confirmation' }
   devise_for :admins, path: 'a', controllers: { sessions: 'sessions' }
 
