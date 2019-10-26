@@ -30,7 +30,8 @@ Rails.application.routes.draw do
   devise_for :students, path: 's', controllers: { sessions: 'sessions',
                                                   registrations: 'registrations',
                                                   confirmations: 'student/confirmation' }
-  devise_for :admins, path: 'a', controllers: { sessions: 'sessions' }
+  devise_for :admins, path: 'a', controllers: { sessions: 'sessions',
+                                                registrations: 'registrations'}
 
   resources :justifications, path: 'justificativa', path_names: { new: 'novo' },
                                                     only: %i[new create]
