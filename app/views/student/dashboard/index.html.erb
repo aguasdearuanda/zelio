@@ -61,9 +61,11 @@
           <h6 class="m-t-0">Minhas Faltas</h6>
           <div class="table-responsive">
             <table class="table table-sm table-striped">
-              <% if @student.klasses.empty? %>
+              <% @student.klasses.each do |klass| %>
+              <% absences = @student.show_attendances(klass.attendances, klass) %>
+              <% if absences.empty? %>
               <tr>
-                Parabéns, você não tem nenhuma falta. :-) <br><br>
+                Parabéns, você não tem falta. :-) <br><br>
               </tr>
               <% else %>
               <thead>
@@ -73,14 +75,13 @@
               </thead>
 
               <tbody>
-                <% @student.klasses.each do |klass| %>
                 <tr>
                   <td>
-                    <%= @student.show_attendances(klass.attendances, klass) %>
+                    <%= absences  %>
                   </td>
                 </tr>
-                <% end %>
               </tbody>
+              <% end %>
               <% end %>
             </table>
           </div>
