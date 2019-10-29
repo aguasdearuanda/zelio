@@ -11,7 +11,7 @@ class Student::JustificationsController < StudentController
 
   def new
     @justification = Justification.new
-    @klasses = Klass.all
+    @klasses = current_user.klasses
   end
 
   def create
