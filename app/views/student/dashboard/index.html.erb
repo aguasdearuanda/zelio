@@ -62,26 +62,25 @@
           <div class="table-responsive">
             <table class="table table-sm table-striped">
               <% @student.klasses.each do |klass| %>
-              <% absences = @student.show_attendances(klass.attendances, klass) %>
-              <% if absences.empty? %>
-              <tr>
-                Parabéns, você não tem falta. :-) <br><br>
-              </tr>
-              <% else %>
-              <thead>
-                <tr>
-                  <th style="width: 5%;">Aulas</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>
-                    <%= absences  %>
-                  </td>
-                </tr>
-              </tbody>
-              <% end %>
+                <% absences = @student.show_attendances(klass.attendances, klass) %>
+                <% if absences.empty? %>
+                  <tr>
+                    Parabéns, você não tem falta. :-) <br><br>
+                  </tr>
+                <% else %>
+                  <thead>
+                    <th>Aula</th>
+                    <th>Data</th>
+                  </thead>
+                  <tbody>
+                    <% absences.each do |klass| %>
+                      <tr>
+                        <td><%= klass[:name] %></td>
+                        <td><%= klass[:realized_at] %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                <% end %>
               <% end %>
             </table>
           </div>
