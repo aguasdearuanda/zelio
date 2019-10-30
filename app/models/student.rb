@@ -66,7 +66,7 @@ class Student < ApplicationRecord
   private
 
   def attendance_info(klass)
-    name = klass.name.gsub(/\d{2}\/\d{2}\/\d{2,4}/, '').rstrip
+    name = klass.name.gsub(%r{\d{2}\/\d{2}\/\d{2,4}}, '').rstrip
     { name: name, realized_at: klass.realized_at.strftime('%d/%m/%Y') }
   end
 end
