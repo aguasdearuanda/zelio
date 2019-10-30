@@ -46,11 +46,13 @@ class Student < ApplicationRecord
 
   def show_attendances(attendances, klass)
     attendance = []
+
     period = check_situations(attendances, klass)
     period.each do |klasses|
-      attendance << klasses.name if klasses.students.where(id: id).empty?
+      attendance << attendance_info(klasses) if klasses.students.where(id: id).empty?
     end
-    attendance.join('<br>').html_safe
+
+    attendance
   end
 
   def check_justifications(klass, email)
@@ -59,5 +61,12 @@ class Student < ApplicationRecord
 
   def justifications
     Justification.all.where(email: email)
+  end
+
+  private
+
+  def attendance_info(klass)
+    name = klass.name.gsub(/\d{2}\/\d{2}\/\d{2,4}/, '').rstrip
+    { name: name, realized_at: klass.realized_at.strftime('%d/%m/%Y') }
   end
 end
