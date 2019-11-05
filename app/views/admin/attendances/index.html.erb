@@ -1,88 +1,52 @@
 <!-- Start content -->
 <div class="content">
-    <div class="container-fluid">
-      <div class="row">
-          <div class="col-sm-12">
-              <h4 class="header-title m-t-0 m-b-20">Aulas -  <%= link_to 'Cadastrar nova aula', new_admin_klass_attendance_path(klass_id: params[:klass_id], id: @attendance), class: 'btn btn-success btn-sm' %></h4>
-          </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h4 class="header-title m-t-0 m-b-20">Aulas -  <%= link_to 'Cadastrar nova aula', new_admin_klass_attendance_path(klass_id: params[:klass_id], id: @attendance), class: 'btn btn-success btn-sm' %></h4>
       </div>
-
-      <div class="row">
-          <div class="col-12">
-              <div class="table-responsive">
-                  <table id="datatable" class="table table-bordered">
-                    <% if @attendances.empty? %>
-                    <p class="text-muted font-13 m-b-30">
-                        Nenhuma lista vinculada a esta turma!
-                    </p>
-                    <% else %>
-                    <thead>
-                      <tr><th>Turma: <%= @klass.name %></th></tr>
-
-                        <tr>
-                            <th>Assunto da Aula</th>
-                            <th>Data da Realização</th>
-                            <th>Ação</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <% @klass.attendances.each do |attendance| %>
-                        <tr>
-                            <td><%= attendance.name %></td>
-                            <td><%= attendance.realized_at&.strftime("%d-%m-%Y") %></td>
-                            <td><%= link_to 'Lista de presença', admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-info btn-sm' %>
-                                <%= link_to 'Editar', edit_admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-success btn-sm' %>
-                                <%= link_to 'Excluir', admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-danger btn-sm',  data: { confirm: 'Tem certeza?' }, method: :delete %>
-                        </tr>
-                        <% end %>
-                    </tbody>
-                    <% end %>
-                  </table>
-              </div>
-          </div>
-      </div> <!-- end row -->
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-
-                // Default Datatable
-                $('#datatable').DataTable();
-
-                //Buttons examples
-                var table = $('#datatable-buttons').DataTable({
-                    lengthChange: false,
-                    buttons: ['copy', 'excel', 'pdf']
-                });
-
-                // Key Tables
-
-                $('#key-table').DataTable({
-                    keys: true
-                });
-
-                // Responsive Datatable
-                $('#responsive-datatable').DataTable();
-
-                // Multi Selection Datatable
-                $('#selection-datatable').DataTable({
-                    select: {
-                        style: 'multi'
-                    }
-                });
-
-                table.buttons().container()
-                .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
-            } );
-
-        </script>
-
-    </div> <!-- container -->
-
-    <!-- Footer -->
-    <div class="footer">
-      <%= render 'common/footer' %>
     </div>
-    <!-- END Footer -->
 
+    <div class="row">
+      <div class="col-12">
+        <div class="table-responsive">
+          <table id="datatable" class="table table-bordered">
+            <% if @attendances.empty? %>
+              <p class="text-muted font-13 m-b-30">
+                Nenhuma lista vinculada a esta turma!
+              </p>
+            <% else %>
+              <thead>
+                <tr><th>Turma: <%= @klass.name %></th></tr>
+
+                <tr>
+                  <th>Assunto da Aula</th>
+                  <th>Data da Realização</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @attendances.each do |attendance| %>
+                  <tr>
+                    <td><%= attendance.name %></td>
+                    <td><%= l(attendance.realized_at, format: :only_date) %></td>
+                    <td><%= link_to 'Lista de presença', admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-info btn-sm' %>
+                    <%= link_to 'Editar', edit_admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-success btn-sm' %>
+                    <%= link_to 'Excluir', admin_klass_attendance_path(klass_id: params[:klass_id], id: attendance), class: 'btn btn-danger btn-sm',  data: { confirm: 'Tem certeza?' }, method: :delete %>
+                  </tr>
+                <% end %>
+              </tbody>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div> <!-- end row -->
+  </div> <!-- container -->
+
+  <!-- Footer -->
+  <div class="footer">
+    <%= render 'common/footer' %>
+  </div>
+  <!-- END Footer -->
 </div>

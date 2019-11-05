@@ -4,8 +4,8 @@ class Admin::AttendancesController < AdminController
   layout 'internal'
 
   def index
-    @attendances = Attendance.all
     @klass = Klass.find_by(id: params[:klass_id])
+    @attendances = @klass.attendances.order(realized_at: :desc)
   end
 
   def show

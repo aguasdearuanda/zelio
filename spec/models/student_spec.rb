@@ -33,12 +33,12 @@ RSpec.describe Student, type: :model do
       student_status = create(:situation, klass: attendances.first.klasses.first,
                                           student: student)
       response = student.show_attendances(attendances, student_status.klass)
-      expect(response).to be_a(String)
+      expect(response).to be_a(Array)
     end
 
     it 'shows the student attendances classes' do
       response = student.show_attendances(attendances, student.klasses.first.id)
-      expect(response).to be_a(String)
+      expect(response).to be_a(Array)
     end
   end
 

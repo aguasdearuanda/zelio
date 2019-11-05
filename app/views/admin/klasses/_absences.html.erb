@@ -8,15 +8,6 @@
 <div class="modal-body">
   <strong><p><%= @student.name %></p></strong>
   <div class="row">
-    <div class="col-md-4">Aulas:</div>
-    <div class="col-md-6">
-      <strong>
-        <%= @details[:klasses].present? ? raw(@details[:klasses]) : '-' %>
-      </strong>
-    </div>
-  </div>
-  <br>
-  <div class="row">
     <div class="col-md-4">Faltas:</div>
     <div class="col-md-6"><strong><%= @details[:absences] %></strong></div>
   </div>
@@ -30,8 +21,31 @@
     <div class="col-md-4">Total:</div>
     <div class="col-md-6"><strong><span class="text-danger"><%= @details[:absences] - @details[:justifications] %></span></strong></div>
   </div>
-</div>
+  <br>
 
+  <% if @details[:klasses].present? %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-sm table-stripped">
+            <thead>
+              <th>Aula</th>
+              <th>Data</th>
+            </thead>
+            <tbody>
+              <% @details[:klasses].each do |klass| %>
+                <tr>
+                  <td><%= klass[:name] %></td>
+                  <td><%= klass[:realized_at] %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 </div>
