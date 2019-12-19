@@ -16,7 +16,7 @@ gem 'jquery-rails', '>= 4.3.5'
 gem 'paperclip'
 gem 'pg'
 gem 'puma', '~> 3.12', '>= 3.12.2'
-gem 'rack', '>= 2.0.6'
+gem 'rack', '>= 2.0.8'
 gem 'rails', '>= 5.2.3'
 gem 'recaptcha'
 gem 'rubocop-rails_config', '>= 0.6.2'
@@ -45,7 +45,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 3.24.0'
+  gem 'capybara', '>= 3.28.0'
   gem 'selenium-webdriver', '>= 3.142.3'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper', '>= 2.1.1'
