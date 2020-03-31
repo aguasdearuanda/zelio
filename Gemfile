@@ -17,22 +17,22 @@ gem 'paperclip'
 gem 'pg'
 gem 'puma', '~> 3.12', '>= 3.12.2'
 gem 'rack', '>= 2.0.8'
-gem 'rails', '>= 5.2.3'
+gem 'rails', '>= 6.0.2.1'
 gem 'recaptcha'
-gem 'rubocop-rails_config', '>= 0.6.2'
-gem 'simple_form', '>= 5.0.0'
+gem 'rubocop-rails_config', '>= 0.9.0'
+gem 'simple_form', '>= 5.0.1'
 gem 'sprockets-rails', '>= 3.2.1'
 gem 'travis'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
-  gem 'factory_bot_rails', '>= 5.0.2'
+  gem 'factory_bot_rails', '>= 5.1.1'
   gem 'faker'
   gem 'pry-nav'
   gem 'pry-rails'
   gem 'rails-erd'
-  gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
+  gem 'rspec-rails', '~> 3.8', '>= 3.8.3'
   gem 'rspec_api_documentation'
 end
 
@@ -40,12 +40,12 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 3.7.0'
+  gem 'web-console', '>= 4.0.1'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 3.28.0'
+  gem 'capybara', '>= 3.29.0'
   gem 'selenium-webdriver', '>= 3.142.3'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper', '>= 2.1.1'
