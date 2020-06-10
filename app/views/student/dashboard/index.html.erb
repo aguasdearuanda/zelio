@@ -69,8 +69,13 @@
                   </tr>
                 <% else %>
                   <thead>
-                    <th>Aula</th>
-                    <th>Data</th>
+                    <tr>
+                      <th><br /><%= klass.name %></th>
+                    </tr>
+                    <tr>
+                      <th>Aula</th>
+                      <th>Data</th>
+                    </tr>
                   </thead>
                   <tbody>
                     <% absences.each do |klass| %>
