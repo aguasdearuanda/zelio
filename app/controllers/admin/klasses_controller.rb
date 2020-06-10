@@ -2,7 +2,7 @@
 
 class Admin::KlassesController < AdminController
   layout 'internal'
-  before_action :set_klass, except: %i[index new create disable_student absences]
+  before_action :set_klass, except: %i[index new create]
 
   def index
     @klasses = Klass.all
@@ -20,10 +20,10 @@ class Admin::KlassesController < AdminController
     @klass = Klass.new(klass_params)
 
     if @klass.save
-      flash[:success] = 'klass was created succesfully.'
+      flash[:success] = 'Turma criada com sucesso!'
       redirect_to admin_klasses_path
     else
-      flash[:error] = 'Something went wrong.'
+      flash[:error] = 'Algo deu errado, verifique se você não esqueceu de preencher algo!'
       render :new
     end
   end
@@ -34,7 +34,7 @@ class Admin::KlassesController < AdminController
 
   def update
     if @klass.update(klass_params)
-      flash[:success] = 'The klass was updated succesfully.'
+      flash[:success] = 'A turma foi atualizada com sucesso!'
       redirect_to admin_klasses_path
     else
       render :edit
@@ -42,13 +42,17 @@ class Admin::KlassesController < AdminController
   end
 
   def disable_student
-    @klass = Klass.find(params[:klass_id])
     @klass.disable_student(params[:student_id])
     redirect_to admin_klasses_path
   end
 
+  def disable
+    @klass.disable
+    flash[:success] = 'A turma foi desativada com sucesso!'
+    redirect_to admin_klasses_path
+  end
+
   def absences
-    @klass = Klass.find(params[:klass_id])
     @student = @klass.students.find(params[:student_id])
     @attendances = @klass.attendances.all
     @details = student_details
@@ -61,7 +65,7 @@ class Admin::KlassesController < AdminController
   def destroy
     @klass.destroy
 
-    flash['success'] = 'klass was removed successfully.'
+    flash['success'] = 'Turma excluída com sucesso!'
     redirect_to admin_klasses_path
   end
 
@@ -72,7 +76,7 @@ class Admin::KlassesController < AdminController
   end
 
   def set_klass
-    @klass = Klass.find(params[:id])
+    @klass = Klass.find(params[:klass_id] || params[:id])
   end
 
   def student_details
