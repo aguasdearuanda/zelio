@@ -20,10 +20,10 @@ class Admin::KlassesController < AdminController
     @klass = Klass.new(klass_params)
 
     if @klass.save
-      flash[:success] = 'Turma criada com sucesso!'
+      flash[:notice] = 'Turma criada com sucesso!'
       redirect_to admin_klasses_path
     else
-      flash[:error] = 'Algo deu errado, verifique se você não esqueceu de preencher algo!'
+      flash[:alert] = 'Algo deu errado, verifique se você não esqueceu de preencher algo!'
       render :new
     end
   end
@@ -34,7 +34,7 @@ class Admin::KlassesController < AdminController
 
   def update
     if @klass.update(klass_params)
-      flash[:success] = 'A turma foi atualizada com sucesso!'
+      flash[:notice] = 'A turma foi atualizada com sucesso!'
       redirect_to admin_klasses_path
     else
       render :edit
@@ -48,7 +48,7 @@ class Admin::KlassesController < AdminController
 
   def disable
     @klass.disable
-    flash[:success] = 'A turma foi desativada com sucesso!'
+    flash[:notice] = 'A turma foi desativada com sucesso!'
     redirect_to admin_klasses_path
   end
 
@@ -65,7 +65,7 @@ class Admin::KlassesController < AdminController
   def destroy
     @klass.destroy
 
-    flash['success'] = 'Turma excluída com sucesso!'
+    flash[:notice] = 'Turma excluída com sucesso!'
     redirect_to admin_klasses_path
   end
 

@@ -15,11 +15,6 @@
   </head>
 
   <body>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% elsif alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
     <!-- Begin page -->
     <div id="wrapper">
 
@@ -37,6 +32,12 @@
 
       <!-- Start right Content here -->
       <div class="content-page">
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% elsif alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+        
         <%= yield %>
       </div>
       <!-- End Right content here -->
