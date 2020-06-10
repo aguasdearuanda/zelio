@@ -14,4 +14,14 @@ class Klass < ApplicationRecord
   def disable
     update(active: false)
   end
+
+  def active_students
+    students = []
+
+    self.students.each do |student|
+      students << student if student.situations.empty?
+    end
+
+    students.sort
+  end
 end
