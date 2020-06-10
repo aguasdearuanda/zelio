@@ -12,6 +12,6 @@ class Klass < ApplicationRecord
   end
 
   def disable
-    self.update(active: false)
+    update(active: false)
   end
 end
