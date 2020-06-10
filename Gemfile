@@ -13,14 +13,14 @@ gem 'coveralls', '>= 0.8.23', require: false
 gem 'devise', '>= 4.7.1'
 gem 'jbuilder', github: 'rails/jbuilder', branch: 'master'
 gem 'jquery-rails', '>= 4.3.5'
-gem 'paperclip'
+gem 'paperclip', '>= 6.1.0'
 gem 'pg'
 gem 'puma', '~> 3.12', '>= 3.12.4'
 gem 'rack', '>= 2.0.8'
-gem 'rails', '>= 6.0.2.2'
+gem 'rails', '>= 6.0.3.1'
 gem 'recaptcha', '>= 5.1.0'
-gem 'rubocop-rails_config', '>= 0.9.0'
-gem 'simple_form', '>= 5.0.1'
+gem 'rubocop-rails_config', '>= 0.10.0'
+gem 'simple_form', '>= 5.0.2'
 gem 'sprockets-rails', '>= 3.2.1'
 gem 'travis', '>= 1.8.10'
 gem 'turbolinks', '~> 5'
@@ -31,9 +31,9 @@ group :development, :test do
   gem 'faker'
   gem 'pry-nav'
   gem 'pry-rails'
-  gem 'rails-erd'
+  gem 'rails-erd', '>= 1.6.0'
   gem 'rspec-rails', '~> 3.8', '>= 3.8.3'
-  gem 'rspec_api_documentation'
+  gem 'rspec_api_documentation', '>= 6.1.0'
 end
 
 group :development do
@@ -50,7 +50,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'webdrivers', '~> 3.0'
   gem 'rails-controller-testing', '>= 1.0.4'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '>= 4.1.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
