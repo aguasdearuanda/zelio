@@ -11,7 +11,7 @@ Bundler.require(*Rails.groups)
 module Zelio
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
+    config.load_defaults 6.0
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     # config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
     config.time_zone = 'America/Maceio'

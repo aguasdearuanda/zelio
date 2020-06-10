@@ -10,4 +10,8 @@ class Klass < ApplicationRecord
   def disable_student(student)
     situations.create(klass_id: self, student_id: student, active: false)
   end
+
+  def disable
+    update(active: false)
+  end
 end
