@@ -8,10 +8,10 @@ gem 'aws-sdk-s3', '~> 1'
 gem 'barnes'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bugsnag', '~> 6.12'
-gem 'coffee-rails', '~> 4.2', '>= 4.2.2'
+gem 'coffee-rails', '~> 5.0'
 gem 'coveralls', '>= 0.8.23', require: false
 gem 'devise', '>= 4.7.1'
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', github: 'rails/jbuilder', branch: 'master'
 gem 'jquery-rails', '>= 4.3.5'
 gem 'paperclip'
 gem 'pg'
@@ -48,7 +48,7 @@ group :test do
   gem 'capybara', '>= 3.29.0'
   gem 'selenium-webdriver', '>= 3.142.3'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper', '>= 2.1.1'
+  gem 'webdrivers', '~> 3.0'
   gem 'rails-controller-testing', '>= 1.0.4'
   gem 'shoulda-matchers'
 end
