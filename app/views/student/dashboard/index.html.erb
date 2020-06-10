@@ -65,7 +65,7 @@
                 <% absences = @student.show_attendances(klass.attendances, klass) %>
                 <% if absences.empty? %>
                   <tr>
-                    Parabéns, você não tem falta. :-) <br><br>
+                    Parabéns, você não tem falta <b>na <%= klass.name %></b> . :-) <br><br>
                   </tr>
                 <% else %>
                   <thead>
