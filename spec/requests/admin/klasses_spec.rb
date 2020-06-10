@@ -96,6 +96,19 @@ RSpec.describe 'Klasses management', type: :request do
     end
   end
 
+  describe '#disable' do
+    let(:klass) { create(:klass) }
+
+    it 'is active klass' do
+      expect(klass.active).to be true
+    end
+
+    it 'disables the klass' do
+      get admin_klass_disable_path(klass)
+      expect(response).to redirect_to admin_klasses_path
+    end
+  end
+
   describe '#absences' do
     let(:student) { create(:student) }
 
