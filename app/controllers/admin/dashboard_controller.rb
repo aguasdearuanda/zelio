@@ -7,7 +7,7 @@ class Admin::DashboardController < AdminController
     @attendances = Attendance.all
     @pending_justifications = Justification.all.where(status: 'pendente')
     @total_justifications = Justification.all.count
-    @birthday = birthday_list
+    @birthday = check_birthday_list
   end
 
   private
@@ -20,7 +20,7 @@ class Admin::DashboardController < AdminController
     count
   end
 
-  def birthday_list
+  def check_birthday_list
     Student.where('extract(month from birthday) = ?', Date.today.month)
   end
 end
