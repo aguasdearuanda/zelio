@@ -27,14 +27,11 @@ class Klass < ApplicationRecord
 
   def birthday_list
     students = []
-    if self.active
-      list = self.students.where('extract(month from birthday) = ?', Time.zone.today.month)
-      list.each do |student|
-        students << student if student.situations.empty?
-      end
-      students.sort
-    else
-      return
+    return unless active
+    list = self.students.where('extract(month from birthday) = ?', Time.zone.today.month)
+    list.each do |student|
+      students << student if student.situations.empty?
     end
+    students.sort
   end
 end
