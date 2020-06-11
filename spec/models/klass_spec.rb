@@ -59,7 +59,7 @@ RSpec.describe Klass, type: :model do
 
     context 'when the class and student are active' do
       it 'show only active students and class' do
-        students = create_list(:student, 3, klass_ids: [klass.id], birthday: DateTime.yesterday)
+        students = create_list(:student, 3, klass_ids: [klass.id], birthday: Date.yesterday)
         student = students.first
         klass.disable_student(student.id)
         expect(klass.birthday_list.count).to be_equal(2)
