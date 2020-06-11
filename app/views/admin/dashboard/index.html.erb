@@ -94,20 +94,21 @@
           </h6>
           <div class="table-responsive">
             <table class="table table-sm table-striped">
-              <% if @birthday.empty? %>
+              <% @klasses.each do |klass| %>
+              <% if klass&.birthday_list.nil? && klass.active %>
               <tr>
-                Nenhum aniversariante este mês. :-( <br><br>
+                Nenhum aniversariante este mês na <b><%= klass.name %></b>. :-( <br><br>
               </tr>
               <% else %>
               <thead>
                 <tr>
-                  <th style="width: 10%;">Nome</th>
-                  <th style="width: 5%;">Data de Nascimento</th>
+                  <th><br><%= klass.name %></th>
+                  <th></th>
                 </tr>
               </thead>
 
               <tbody>
-                <% @birthday.each do |student| %>
+                  <% klass&.birthday_list.each do |student| %>
                 <tr>
                   <td>
                     <%= student.name %>
@@ -116,8 +117,9 @@
                     <%= student&.birthday.strftime("%d-%m") %>
                   </td>
                 </tr>
-                <% end %>
+                 <% end %>
               </tbody>
+               <% end %>
               <% end %>
             </table>
           </div>
