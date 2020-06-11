@@ -102,13 +102,13 @@
               <% else %>
               <thead>
                 <tr>
-                  <th><br><%= klass.name %></th>
+                  <th><br><%= klass.name if klass.active %></th>
                   <th></th>
                 </tr>
               </thead>
 
               <tbody>
-                  <% klass&.birthday_list.each do |student| %>
+                  <% klass&.birthday_list&.each do |student| %>
                 <tr>
                   <td>
                     <%= student.name %>
