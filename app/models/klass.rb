@@ -19,8 +19,8 @@ class Klass < ApplicationRecord
     students = []
 
     self.students.each do |student|
-      check_situation = student.situations.where(klass_id: self.id)
-      students << student if !check_situation || check_situation.empty?
+      check_situation = student.situations.where(klass_id: id)
+      students << student if check_situation.blank?
     end
 
     students.sort_by(&:name)
