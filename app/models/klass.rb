@@ -19,10 +19,11 @@ class Klass < ApplicationRecord
     students = []
 
     self.students.each do |student|
-      students << student if student.situations.empty?
+      check_situation = student.situations.where(klass_id: self.id)
+      students << student if !check_situation || check_situation.empty?
     end
 
-    students.sort
+    students.sort_by(&:name)
   end
 
   def birthday_list
@@ -32,6 +33,6 @@ class Klass < ApplicationRecord
     list.each do |student|
       students << student if student.situations.empty?
     end
-    students.sort
+    students.sort_by(&:name)
   end
 end
