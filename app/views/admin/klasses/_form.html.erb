@@ -19,7 +19,7 @@
               </tr>
             </thead>
             <tbody>
-              <% @klass.students.each do |student| %>
+              <% @klass.students.sort_by(&:name).each do |student| %>
               <tr>
                 <td>
                   <%= student.name %>
