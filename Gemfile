@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.7.5'
 gem 'aws-sdk-s3', '~> 1'
 gem 'barnes'
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -15,7 +15,7 @@ gem 'jbuilder', github: 'rails/jbuilder', branch: 'master'
 gem 'jquery-rails', '>= 4.4.0'
 gem 'paperclip', '>= 6.1.0'
 gem 'pg'
-gem 'puma', '~> 3.12', '>= 3.12.6'
+gem 'puma', '~> 4.3', '>= 4.3.8'
 gem 'rack', '>= 2.0.8'
 gem 'rails', '>= 6.1.4.1'
 gem 'recaptcha', '>= 5.1.0'
