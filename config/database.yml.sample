@@ -1,17 +1,16 @@
-development:
+default: &default
   adapter: postgresql
-  encoding: utf8
-  database: zelio_development
+  encoding: unicode
+  host: zelio_postgres
   username: postgres
-  password:
-  host: localhost
-  port: 5432
+  password: postgres
+  pool: 5
+
+development:
+  <<: *default
+  database: zelio_development
+
 
 test:
-  adapter: postgresql
-  encoding: utf8
+  <<: *default
   database: zelio_test
-  username: postgres
-  password:
-  host: localhost
-  port: 5432
