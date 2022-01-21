@@ -31,3 +31,5 @@
 
 # Ignore coveralls log
 /coverage
+config/database.yml
+.gitignore
