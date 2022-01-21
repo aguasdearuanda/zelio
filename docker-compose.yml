@@ -1,0 +1,28 @@
+version: "3.9"
+networks:
+  db:
+  backend:
+services:
+  db:
+    container_name: zelio_postgres
+    image: postgres:11.14
+    networks:
+      - db
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5433:5432
+  backend:
+    container_name: zelio_backend
+    build: .
+    volumes:
+      - .:/myapp
+    depends_on:
+      - db
+    ports:
+      - "3001:3000"
+    networks:
+      - backend
+      - db
