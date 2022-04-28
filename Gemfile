@@ -10,24 +10,24 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bugsnag', '~> 6.12'
 gem 'coffee-rails', '~> 5.0', '>= 5.0.0'
 gem 'coveralls', '>= 0.8.23', require: false
-gem 'devise', '>= 4.7.3'
+gem 'devise', '>= 4.8.0'
 gem 'jbuilder', github: 'rails/jbuilder', branch: 'master'
 gem 'jquery-rails', '>= 4.4.0'
 gem 'paperclip', '>= 6.1.0'
 gem 'pg'
 gem 'puma', '~> 4.3', '>= 4.3.9'
 gem 'rack', '>= 2.0.8'
-gem 'rails', '>= 6.1.4.2'
+gem 'rails', '>= 6.1.5.1'
 gem 'recaptcha', '>= 5.1.0'
-gem 'rubocop-rails_config', '>= 1.1.3'
-gem 'simple_form', '>= 5.0.3'
-gem 'sprockets-rails', '>= 3.2.2'
+gem 'rubocop-rails_config', '>= 1.7.5'
+gem 'simple_form', '>= 5.1.0'
+gem 'sprockets-rails', '>= 3.4.2'
 gem 'travis', '>= 1.8.10'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
-  gem 'factory_bot_rails', '>= 6.1.0'
+  gem 'factory_bot_rails', '>= 6.2.0'
   gem 'faker'
   gem 'pry-nav'
   gem 'pry-rails'
@@ -40,7 +40,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 4.1.0'
+  gem 'web-console', '>= 4.2.0'
 end
 
 group :test do
