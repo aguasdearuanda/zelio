@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.5'
-gem 'aws-sdk-s3', '~> 1'
+gem 'aws-sdk-s3', '~> 1', '>= 1.43.0'
 gem 'barnes'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bugsnag', '~> 6.12'
