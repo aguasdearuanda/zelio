@@ -11,7 +11,7 @@ gem 'bugsnag', '~> 6.12'
 gem 'coffee-rails', '~> 5.0', '>= 5.0.0'
 gem 'coveralls', '>= 0.8.23', require: false
 gem 'devise', '>= 4.8.0'
-gem 'jbuilder', github: 'rails/jbuilder', branch: 'master'
+gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails', '>= 4.4.0'
 gem 'paperclip', '>= 6.1.0'
 gem 'pg'
@@ -32,8 +32,7 @@ group :development, :test do
   gem 'pry-nav'
   gem 'pry-rails'
   gem 'rails-erd', '>= 1.6.0'
-  gem 'rspec-rails', '~> 3.9', '>= 3.9.1'
-  gem 'rspec_api_documentation', '>= 6.1.0'
+  gem 'rspec-rails', '~> 4.1.0'
 end
 
 group :development do
