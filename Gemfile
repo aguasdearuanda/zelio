@@ -27,7 +27,7 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
-  gem 'factory_bot_rails', '>= 6.2.0'
+  gem 'factory_bot_rails', '>= 6.3.0'
   gem 'faker'
   gem 'pry-nav'
   gem 'pry-rails'
