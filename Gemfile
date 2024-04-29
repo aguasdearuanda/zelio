@@ -11,7 +11,7 @@ gem 'bugsnag', '~> 6.12'
 gem 'coffee-rails', '~> 5.0', '>= 5.0.0'
 gem 'coveralls', '>= 0.8.23', require: false
 gem 'devise', '>= 4.8.0'
-gem 'jbuilder', '~> 2.7'
+gem 'jbuilder', '~> 2.12', '>= 2.12.0'
 gem 'jquery-rails', '>= 4.4.0'
 gem 'paperclip', '>= 6.1.0'
 gem 'pg'
