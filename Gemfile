@@ -32,7 +32,7 @@ group :development, :test do
   gem 'pry-nav'
   gem 'pry-rails'
   gem 'rails-erd', '>= 1.6.0'
-  gem 'rspec-rails', '~> 4.1.0'
+  gem 'rspec-rails', '~> 8.0.0'
 end
 
 group :development do
