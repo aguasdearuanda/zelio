@@ -22,7 +22,7 @@ gem 'recaptcha', '>= 5.1.0'
 gem 'rubocop-rails_config', '>= 1.7.5'
 gem 'simple_form', '>= 5.1.0'
 gem 'sprockets-rails', '>= 3.4.2'
-gem 'travis', '>= 1.8.10'
+gem 'travis', '>= 1.12.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
